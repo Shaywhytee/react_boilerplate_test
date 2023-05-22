@@ -2,12 +2,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable import/no-unresolved */
-import React, { useContext } from 'react'; 
+import React, { useContext } from 'react';
 import CardDeck from '../../components/cards/cards';
 import { ContentContext } from '../../utils/content';
 import AlexJersey from '../../images/alex_jersey.jpg';
 import AlexComputerShot from '../../images/alex_computer_shot.jpg';
-import GroupPicture from '../../images/100t.jpg'
+import GroupPicture from '../../images/100t.jpg';
 
 function About() {
   const contentData = useContext(ContentContext);

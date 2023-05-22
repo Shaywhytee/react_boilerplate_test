@@ -9,15 +9,15 @@ import {
   faTwitch,
   faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
-import Icon from '../../images/Biggest.png'
+import Icon from '../../images/Biggest.png';
 
 function FooterNav() {
   return (
     <div className="footer_bg">
       <div className="footer_wrapper">
-        <img src={Icon} className="icon_wrapper" alt='icon'/>
-        <div className="links_wrapper">
-          <div className="btn_wrapper">
+        <img src={Icon} className="footer_icon_wrapper" alt="icon" />
+        <div className="footer_links_wrapper">
+          <div className="footer_btn_wrapper">
             <button className="home_btn">Home</button>
             <button className="about_btn">About</button>
             <button className="portfolio_btn">Portfolio</button>
@@ -28,7 +28,7 @@ function FooterNav() {
               onClick={() =>
                 window.open('https://www.youtube.com/@TheHonestClimb', '_blank')
               }
-              className="social"
+              className="footer_social"
             >
               <FontAwesomeIcon icon={faYoutube} size="2x" />
             </div>
@@ -36,7 +36,7 @@ function FooterNav() {
               onClick={() =>
                 window.open('https://www.twitch.tv/thehonestclimb', '_blank')
               }
-              className="social"
+              className="footer_social"
             >
               <FontAwesomeIcon icon={faTwitch} size="2x" />
             </div>
@@ -44,7 +44,7 @@ function FooterNav() {
               onClick={() =>
                 window.open('https://www.tiktok.com/@thehonestclimb', '_blank')
               }
-              className="social"
+              className="footer_social"
             >
               <FontAwesomeIcon icon={faTiktok} size="2x" />
             </div>

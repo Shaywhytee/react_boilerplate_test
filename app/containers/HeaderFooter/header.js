@@ -9,16 +9,15 @@ import {
   faTwitch,
   faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
-import Icon from '../../images/Biggest.png'
+import Icon from '../../images/Biggest.png';
 
 function NavBar() {
-
   return (
     <div className="nav_bg">
       <div className="nav_bar_wrapper">
-        <img src={Icon} className='icon_wrapper' alt='icon'/>
-        <div className="btn_wrapper">
-          <div className="user_btns">
+        <img src={Icon} className="nav_icon_wrapper" alt="icon" />
+        <div className="nav_btn_wrapper">
+          <div className="nav_user_btns">
             <Link to="/home" className="nav_btn">
               Home
             </Link>
@@ -33,12 +32,12 @@ function NavBar() {
             </Link>
           </div>
         </div>
-        <div className="socials_wrapper">
+        <div className="nav_socials_wrapper">
           <div
             onClick={() =>
               window.open('https://www.youtube.com/@TheHonestClimb', '_blank')
             }
-            className="social"
+            className="nav_social"
           >
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </div>
@@ -46,7 +45,7 @@ function NavBar() {
             onClick={() =>
               window.open('https://www.twitch.tv/thehonestclimb', '_blank')
             }
-            className="social"
+            className="nav_social"
           >
             <FontAwesomeIcon icon={faTwitch} size="2x" />
           </div>
@@ -54,7 +53,7 @@ function NavBar() {
             onClick={() =>
               window.open('https://www.tiktok.com/@thehonestclimb', '_blank')
             }
-            className="social"
+            className="nav_social"
           >
             <FontAwesomeIcon icon={faTiktok} size="2x" />
           </div>

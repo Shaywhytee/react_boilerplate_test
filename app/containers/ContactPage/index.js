@@ -12,8 +12,8 @@ import {
   faExplosion,
 } from '@fortawesome/free-solid-svg-icons';
 import { ContentContext } from '../../utils/content';
-import ContactForm from '../../components/contactForm';
-import ContactTitleBg from '../../images/project_yi.jpg'
+import ContactForm from '../../components/ContactForm/contactForm';
+import ContactTitleBg from '../../images/project_yi.jpg';
 
 function Contact() {
   const contentData = useContext(ContentContext);
@@ -49,7 +49,11 @@ function Contact() {
   return (
     <div className="contact_container">
       <div className="title_container">
-        <img src={ContactTitleBg} alt="background" className="contact_title_bg" />
+        <img
+          src={ContactTitleBg}
+          alt="background"
+          className="contact_title_bg"
+        />
         <h1>{contactTitle.title}</h1>
         <p>{contactTitle.content}</p>
       </div>
