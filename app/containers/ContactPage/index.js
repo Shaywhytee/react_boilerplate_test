@@ -12,7 +12,7 @@ import {
   faExplosion,
 } from '@fortawesome/free-solid-svg-icons';
 import { ContentContext } from '../../utils/content';
-import ContactForm from '../../components/cards/contactForm';
+import ContactForm from '../../components/contactForm';
 import ContactTitleBg from '../../images/project_yi.jpg'
 
 function Contact() {

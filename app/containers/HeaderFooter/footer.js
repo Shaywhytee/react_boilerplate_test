@@ -23,7 +23,7 @@ function FooterNav() {
             <button className="portfolio_btn">Portfolio</button>
             <button className="contact_btn">Contact</button>
           </div>
-          <div className="socials_wrapper">
+          <div className="footer_socials_wrapper">
             <div
               onClick={() =>
                 window.open('https://www.youtube.com/@TheHonestClimb', '_blank')
@@ -51,7 +51,7 @@ function FooterNav() {
           </div>
         </div>
         <div className="copyright">
-          <p>2023 all right reservered</p>
+          <p>©2023 HonestEditz</p>
         </div>
       </div>
     </div>
