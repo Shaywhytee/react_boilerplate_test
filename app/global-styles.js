@@ -39,7 +39,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     overflow: hidden;
-
   }
   .app_bg {
     position: absolute;
@@ -57,6 +56,15 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     line-height: 1.5em;
   }
+  @media only screen and (max-width: 500px) {
+    body {
+      font-size: 14px;
+    }
+    .app {
+      justify-content: center;
+    }
+  }
+
   ${NavBarStyles}
   ${FooterStyles}
   ${HomePageStyles}

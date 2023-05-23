@@ -37,7 +37,6 @@ function Portfolio() {
         <button onClick={() => handleFilterChange('WOW')}>
           World of Warcraft
         </button>
-        d
       </div>
       <div className="video_grid">
         {filteredVideos.map(video => (

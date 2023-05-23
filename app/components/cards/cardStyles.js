@@ -50,4 +50,19 @@ export const CardStyles = css`
   .about_container button:hover {
     font-size: 15rem;
   }
+  @media only screen and (max-width: 500px) {
+    .about_container .deck_wrapper .deck {
+      flex-grow: 1;
+    }
+    .about_container .deck_wrapper .prev_button {
+      height: 50px;
+      flex-basis: 50%;
+      align-self: flex-end
+    }
+    .about_container .deck_wrapper .next_button {
+      height: 50px;
+      flex-basis: 50%;
+      align-self: flex-end
+    }
+  }
 `;

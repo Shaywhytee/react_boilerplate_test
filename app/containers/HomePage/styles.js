@@ -153,4 +153,37 @@ export const HomePageStyles = css`
     color: rgba(55, 55, 55, 1);
     margin-bottom: 3vh;
   }
+
+  @media only screen and (max-width: 500px) {
+    .home_container {
+      width: 90vw;
+    }
+
+    .home_container .hero_text_wrapper {
+      width: 85vw;
+      height: 40vh;
+    }
+
+    .home_container .contact_btn {
+      width: 20vw;
+      height: 5vh;
+    }
+
+    .home_container .video_sample iframe {
+      width: 85vw;
+    }
+
+    .home_container .steps_wrapper {
+      width: 85vw;
+      height: 100%;
+    }
+
+    .home_container .steps_wrapper .steps_options {
+      flex-direction: column;
+      width: 100%;
+    }
+    .home_container .steps_wrapper .steps_options .step {
+      width: 95%;
+    }
+  }
 `;

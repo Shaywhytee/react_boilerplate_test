@@ -25,7 +25,7 @@ function CardDeck() {
   }
   return(
     <div className="deck_wrapper">
-      <button onClick={handlPrevCard}>&#8249;</button>
+      <button className="prev_button" onClick={handlPrevCard}>&#8249;</button>
       <div className="deck">
         {cardData.map((card, index) => (
           <div key={index} className={`card ${index === activeCardIndex ? "active" : ""}`}>
@@ -33,7 +33,7 @@ function CardDeck() {
           </div>
         ))}
       </div>
-      <button onClick={handlNextCard}>&#8250;</button>
+      <button className="next_button" onClick={handlNextCard}>&#8250;</button>
     </div>
   )
 }

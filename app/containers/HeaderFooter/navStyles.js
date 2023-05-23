@@ -102,4 +102,39 @@ export const NavBarStyles = css`
     text-shadow: 3px 3px 3px black;
     letter-spacing: 1px;
   }
+  @media only screen and (max-width: 500px) {
+    .nav_bg {
+      height: 60vh;
+    }
+
+    .nav_bar_wrapper {
+      flex-direction: column;
+      height: 100%;
+      gap: 5vh;
+    }
+
+    .nav_icon_wrapper {
+      height: 70%;
+      width: 70%;
+    }
+
+    .nav_bar_wrapper .nav_btn_wrapper .nav_user_btns {
+      flex-direction: column;
+    }
+
+    .nav_bar_wrapper .nav_btn_wrapper .nav_user_btns .nav_btn {
+      font-size: 2rem;
+      width: 30vw;
+      text-align: center;
+    }
+
+    .nav_bar_wrapper .nav_socials_wrapper {
+      flex-direction: row;
+      width: 70vw;
+      height: 15vh;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
 `;

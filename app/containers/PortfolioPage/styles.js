@@ -60,4 +60,27 @@ export const PortfolioStyles = css`
     border: solid grey;
     border-radius: 15px;
   }
+  @media only screen and (max-width: 500px) {
+    .portfolio_container {
+      width: 90vw;
+    }
+    .portfolio_container .filters {
+      justify-content: space-around;
+      height: 10vh;
+      width: 85vw;
+    }
+    .portfolio_container .video_grid {
+      grid-template-columns: 1fr;
+      width: 90vw;
+    }
+    .portfolio_container .video_grid p,
+    .portfolio_container .video_grid h3 {
+      width: 85vw;
+      height: 20vh;
+    }
+    .portfolio_container .video_grid iframe {
+      width: 85vw;
+      height: 40vh
+    }
+  }
 `;

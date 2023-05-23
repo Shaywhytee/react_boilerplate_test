@@ -37,11 +37,11 @@ function About() {
           <h1>{textBox1.title}</h1>
           <p>{textBox1.content}</p>
         </div>
-        <div className="group_picture">
-          <img src={GroupPicture} />
+        <div className="about_square">
+          <img src={GroupPicture} className="group_picture" />
         </div>
-        <div className="gaming_picture">
-          <img src={AlexComputerShot} />
+        <div className="about_square">
+          <img src={AlexComputerShot} className="gaming_picture" />
         </div>
         <div className="about_square">
           <h1>{textBox2.title}</h1>
@@ -51,8 +51,8 @@ function About() {
           <h1>{textBox3.title}</h1>
           <p>{textBox3.content}</p>
         </div>
-        <div className="jersey_picture">
-          <img src={AlexJersey} />
+        <div className="about_square">
+          <img src={AlexJersey} className="jersey_picture" />
         </div>
       </div>
     </div>

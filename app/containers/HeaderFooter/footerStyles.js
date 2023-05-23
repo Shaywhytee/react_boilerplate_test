@@ -82,7 +82,53 @@ export const FooterStyles = css`
   }
   .copyright {
     align-self: flex-end;
-    color: white;
+    color: darkslategrey;
     margin-bottom: 1vh;
+  }
+  @media only screen and (max-width: 500px) {
+    .footer_bg {
+      height: 40vh;
+    }
+
+    .footer_wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      height: 100%;
+      width: 100vw;
+      margin-left: 0px;
+    }
+
+    .footer_icon_wrapper {
+      width: 30vw;
+    }
+    .footer_icon_wrapper img {
+      width: 10vw;
+      height: 10vh;
+    }
+
+    .footer_wrapper .footer_links_wrapper {
+      flex-direction: row;
+    }
+
+    .footer_wrapper .footer_links_wrapper .footer_btn_wrapper {
+      flex-direction: column;
+    }
+
+    .footer_wrapper .footer_links_wrapper .footer_btn_wrapper button {
+      font-size: 1.7rem;
+      width: 20vw;
+      text-align: center;
+    }
+
+    .footer_wrapper .footer_links_wrapper .footer_socials_wrapper {
+      width: 20vw;
+      height: 15vh;
+      align-items: center;
+    }
+
+    .footer_wrapper .copyright {
+      position: absolute;
+      right: 5%;
+    }
   }
 `;

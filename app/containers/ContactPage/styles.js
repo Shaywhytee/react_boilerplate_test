@@ -127,4 +127,45 @@ export const ContactStyles = css`
     border: white;
     color: white;
   }
+  @media only screen and (max-width: 500px) {
+    .contact_container {
+      width: 90vw;
+      height: 100%;
+    }
+    .contact_container .title_container {
+      justify-content: center;
+      align-items: center;
+      height: 40vh;
+    }
+    .contact_container .title_container h1 {
+      line-height: 10vh;
+    }
+    .contact_container .new_clients {
+      font-size: 1rem;
+      height: 15vh;
+    }
+    .contact_container .ad_squares {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 85vw;
+      height: 40vh;
+    }
+    .contact_container .ad_squares .ad_square {
+      width: 42.5vw;
+      height: 20vh;
+    }
+    .contact_container .form_wrapper {
+      width: 40vw;
+      height: 20vh;
+    }
+    .contact_container .form_wrapper .form_selection {
+      width: 40vw;
+      height: 20vh;
+    }
+    .contact_container .form_wrapper .form_selection button{
+      width: 20vw;
+      height: 15vh;
+    }
+
+  }
 `;
