@@ -112,12 +112,17 @@ export const FooterStyles = css`
 
     .footer_wrapper .footer_links_wrapper .footer_btn_wrapper {
       flex-direction: column;
+      
     }
 
     .footer_wrapper .footer_links_wrapper .footer_btn_wrapper button {
       font-size: 1.7rem;
       width: 20vw;
+      height: 5vh;
       text-align: center;
+      text-overflow: visible;
+      overflow: visible;
+      white-space: nowrap;
     }
 
     .footer_wrapper .footer_links_wrapper .footer_socials_wrapper {
