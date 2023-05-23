@@ -166,6 +166,7 @@ export const HomePageStyles = css`
 
     .home_container .contact_btn {
       width: 20vw;
+      min-width: 100px;
       height: 5vh;
     }
 
