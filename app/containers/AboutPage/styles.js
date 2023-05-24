@@ -63,6 +63,8 @@ export const AboutPageStyles = css`
     border-radius: 20px;
     box-shadow: inset 0px 0px 10px 10px white, 0px 0px 10px 2px black;
     transition: 0.5s;
+    object-fit: cover;
+    object-position: center;
   }
   .about_container .squares .about_square .group_picture img,
   .about_container .squares .about_square .gaming_picture img,

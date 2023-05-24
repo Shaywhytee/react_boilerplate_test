@@ -19,25 +19,42 @@ import AppBackground from '../../images/lol_wallpaper.jpg';
 
 import GlobalStyle from '../../global-styles';
 import { ContentProvider } from '../../utils/content';
+import PrivateRoute from '../../components/Auth/privateRoute';
+import VerifyPage from '../AuthPages/VerifyPage';
+import EditHome from '../AuthPages/EditHome';
+import EditAbout from '../AuthPages/EditAbout';
+import EditPortfolio from '../AuthPages/EditPortfolio';
+import EditContact from '../AuthPages/EditContact';
+import { AuthProvider } from '../../utils/authContext';
 
 export default function App() {
   return (
     <div>
       <Router>
-        <ContentProvider>
-          <div className="app">
-            <img src={AppBackground} alt="background" className="app_bg" />
-            <NavBar />
-            <Switch>
-              <Route exact path="/home" component={HomePage} />
-              <Route path="/about" component={About} />
-              <Route path="/portfolio" component={Portfolio} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NotFoundPage} />
-            </Switch>
-            <FooterNav />
-          </div>
-        </ContentProvider>
+        <AuthProvider>
+          <ContentProvider>
+            <div className="app">
+              <img src={AppBackground} alt="background" className="app_bg" />
+              <NavBar />
+              <Switch>
+                <Route exact path="/home" component={HomePage} />
+                <Route path="/about" component={About} />
+                <Route path="/portfolio" component={Portfolio} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/auth" component={VerifyPage} />
+                <PrivateRoute path="/edit-home" component={EditHome} />
+                <PrivateRoute path="/edit-about" component={EditAbout} />
+                <PrivateRoute
+                  path="/edit-portfolio"
+                  component={EditPortfolio}
+                />
+                <PrivateRoute path="/edit-Contact" component={EditContact} />
+                <Route component={NotFoundPage} />
+              </Switch>
+              <FooterNav />
+            </div>
+          </ContentProvider>
+        </AuthProvider>
         <GlobalStyle />
       </Router>
     </div>

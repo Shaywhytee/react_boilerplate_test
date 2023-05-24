@@ -65,7 +65,7 @@ export const FooterStyles = css`
     line-height: 10vh;
   }
 
-  .footer_btn_wrapper button {
+  .footer_btn_wrapper .footer_btn {
     width: 7vw;
     height: 10vh;
     background: none;
@@ -73,9 +73,10 @@ export const FooterStyles = css`
     color: white;
     transition: 0.5s;
     font-size: 2rem;
+    text-decoration: none;
   }
 
-  .footer_btn_wrapper button:hover {
+  .footer_btn_wrapper .footer_btn:hover {
     color: #3aaee1;
     text-shadow: 3px 3px 3px black;
     letter-spacing: 1px;
@@ -115,7 +116,7 @@ export const FooterStyles = css`
       
     }
 
-    .footer_wrapper .footer_links_wrapper .footer_btn_wrapper button {
+    .footer_wrapper .footer_links_wrapper .footer_btn_wrapper .footer_btn {
       font-size: 1.7rem;
       width: 20vw;
       height: 5vh;

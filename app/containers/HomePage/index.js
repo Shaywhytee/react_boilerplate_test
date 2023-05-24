@@ -12,6 +12,7 @@ import {
   faVideo,
   faUpload,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { ContentContext } from '../../utils/content';
 import HeroSectionBg from '../../images/gaming-computer-1024x683.jpg';
 
@@ -42,9 +43,9 @@ function HomePage() {
         <h1>{heroText.title}</h1>
         <p>{heroText.content}</p>
       </div>
-      <button type="button" className="contact_btn">
+      <Link to="/contact" className="contact_btn">
         Contact now
-      </button>
+      </Link>
       <div className="video_sample">
         <h1>{spotlightVideo.title}</h1>
         <iframe

@@ -25,7 +25,6 @@ function Contact() {
   const adSquare4 = contentData.find(item => item.name === 'asSquare4');
   const discordButton = contentData.find(item => item.name === 'discordButton');
   const [selectedOption, setSelectedOption] = useState('');
-  console.log(contentData);
 
   if (
     !contactTitle ||

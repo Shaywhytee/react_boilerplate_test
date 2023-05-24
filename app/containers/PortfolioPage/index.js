@@ -1,12 +1,17 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { AuthContext } from '../../utils/authContext';
+import { handleDelete } from '../../components/Portfolio/HandleDelete';
+import HandleEditForm from '../../components/Portfolio/HandleEditForm';
 
 function Portfolio() {
+  const { loggedIn } = useContext(AuthContext);
   const [videos, setVideos] = useState([]);
   const [activeFilter, setActiveFilter] = useState('');
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     axios
@@ -52,8 +57,21 @@ function Portfolio() {
             />
             <h3>{video.video_name}</h3>
             <p>{video.video_description}</p>
+            {loggedIn && (
+              <div className="admin_video_btns">
+                <button onClick={() => handleDelete(video.id)}>
+                Delete
+                </button>
+                <button type="button" onClick={() => setSelectedVideo(video)}>
+                Edit
+                </button>
+              </div>
+            )}
           </div>
         ))}
+        {selectedVideo && (
+          <HandleEditForm selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo}/> 
+        )}
       </div>
     </div>
   );

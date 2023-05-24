@@ -74,15 +74,20 @@ export const HomePageStyles = css`
     );
     box-shadow: 10px 5px 5px black, inset 0 0 10px white;
     border-radius: 10px;
-    border: solid 3px;
+    border: solid black 3px;
     transition: 0.5s;
     font-size: 1.5rem;
     font-weight: 900;
+    color: black;
+    line-height: 4vh;
+    text-align: center;
+    text-decoration: none;
   }
 
   .home_container .contact_btn:hover {
     box-shadow: 10px 5px 5px grey;
     color: white;
+    border: solid white 3px;
   }
 
   .home_container .video_sample {
@@ -168,6 +173,7 @@ export const HomePageStyles = css`
       width: 20vw;
       min-width: 100px;
       height: 5vh;
+      line-height: 2vh;
     }
 
     .home_container .video_sample iframe {

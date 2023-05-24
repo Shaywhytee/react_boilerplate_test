@@ -4,6 +4,7 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import {
   faYoutube,
   faTwitch,
@@ -18,10 +19,10 @@ function FooterNav() {
         <img src={Icon} className="footer_icon_wrapper" alt="icon" />
         <div className="footer_links_wrapper">
           <div className="footer_btn_wrapper">
-            <button className="home_btn">Home</button>
-            <button className="about_btn">About</button>
-            <button className="portfolio_btn">Portfolio</button>
-            <button className="contact_btn">Contact</button>
+            <Link to="/home" className="footer_btn">Home</Link>
+            <Link to="/about" className="footer_btn">About</Link>
+            <Link to="/portfolio" className="footer_btn">Portfolio</Link>
+            <Link to="/contact" className="footer_btn">Contact</Link>
           </div>
           <div className="footer_socials_wrapper">
             <div

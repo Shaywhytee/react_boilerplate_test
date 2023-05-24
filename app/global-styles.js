@@ -7,6 +7,7 @@ import { ContactStyles } from './containers/ContactPage/styles';
 import { AboutPageStyles } from './containers/AboutPage/styles';
 import { ContactFormStyles } from './components/ContactForm/contactFormStyles';
 import { CardStyles } from './components/cards/cardStyles';
+import { AuthPagesStyles } from './containers/AuthPages/AuthStyles';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -73,6 +74,7 @@ const GlobalStyle = createGlobalStyle`
   ${PortfolioStyles}
   ${ContactStyles}
   ${ContactFormStyles}
+  ${AuthPagesStyles}
 `;
 
 export default GlobalStyle;
