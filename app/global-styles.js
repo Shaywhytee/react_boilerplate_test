@@ -8,6 +8,7 @@ import { AboutPageStyles } from './containers/AboutPage/styles';
 import { ContactFormStyles } from './components/ContactForm/contactFormStyles';
 import { CardStyles } from './components/cards/cardStyles';
 import { AuthPagesStyles } from './containers/AuthPages/AuthStyles';
+import { SlideStyles } from './components/Misc/Slide';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -66,6 +67,35 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fade-out {
+    opacity: 1;
+    animation: fadeOut 1s ease-in forwards;
+    z-index: 4;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   ${NavBarStyles}
   ${FooterStyles}
   ${HomePageStyles}
@@ -75,6 +105,7 @@ const GlobalStyle = createGlobalStyle`
   ${ContactStyles}
   ${ContactFormStyles}
   ${AuthPagesStyles}
+  ${SlideStyles}
 `;
 
 export default GlobalStyle;

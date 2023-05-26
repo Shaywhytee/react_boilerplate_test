@@ -6,29 +6,38 @@ export const PortfolioStyles = css`
   .portfolio_container {
     display: flex;
     flex-direction: column;
-    gap: 12vh;
     justify-content: space-around;
     align-items: center;
-    width: 70vw;
-    margin-bottom: 5vh;
-    padding-bottom: 5vh;
-    background-color: #e6e6e6;
-    box-shadow: 0px 5px 30px black;
-    border-radius: 0 0 15px 15px;
-    z-index: 1;
+    width: 100vw;
+    padding: 15vh 0;
+    background-color: #2D3142;
     overflow: hidden;
   }
 
   .portfolio_container .filters {
     display: flex;
-    width: 20vw;
-    height: 5vh;
+    width: 45vw;
+    height: 7vh;
+    align-self: flex-end;
+
   }
 
-  .portfolio_container .filters button {
-    width: 5vw;
-    min-width: 75px;
+  .portfolio_container .filters select {
+    width: 20vw;
+    min-width: 150px;
     font-size: 1.5rem;
+    background-color: #6097D0;
+    border: none;
+    margin-left: 2vw;
+    text-align: center;
+    color: #C0BEC6;
+  }
+  option {
+    min-width: 75px;
+    height: 40vh;
+    font-size: 1.5rem;
+    background-color: #4F75A1;
+    text-align: center;
   }
 
   .portfolio_container .video_grid {
@@ -36,43 +45,80 @@ export const PortfolioStyles = css`
     grid-template-columns: 1fr 1fr;
     text-align: center;
     width: 100%;
+    padding-top: 10vh;
+    color: #C0BEC6;
   }
 
   .portfolio_container .video_grid h3 {
-    font-size: 2rem;
-    width: 30vw;
-    height: 7vh;
-    margin: 1vh 1vw;
-    padding: 1vh 1vw;
-    line-height: 3vh;
-    background-color: aliceblue;
-    border: solid grey;
-    border-radius: 15px;
+
   }
 
   .portfolio_container .video_grid p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
-    width: 30vw;
+    width: 50vw;
     height: 7vh;
     margin: 1vh 1vw;
     padding: 1vh 1vw;
-    background-color: aliceblue;
-    border: solid grey;
-    border-radius: 15px;
+    background-color: #4F75A1;
   }
-  @media only screen and (max-width: 500px) {
+  .portfolio_container .video_grid iframe {
+    width: 50vw;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    background-color: #3A3E4E;
+  }
+  .video_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10vh;
+    background-color: #474A5A;
+  }
+  .video_card h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 50vw;
+    height: 15vh;
+    margin: 1vh 1vw;
+    padding: 3vh 1vw;
+    line-height: 3vh;
+    background-color: #4F75A1;
+  }
+
+
+  @media only screen and (max-width: 750px) {
     .portfolio_container {
-      width: 90vw;
+      width: 100vw;
     }
     .portfolio_container .filters {
+      flex-direction: column;
       justify-content: space-around;
-      height: 10vh;
-      width: 85vw;
+      align-items: center;
+      align-self: center;
+      width: 40vw;
+      height: 25vh;
     }
+
+    .portfolio_container .filters select {
+      height: 10vh;
+    }
+
     .portfolio_container .video_grid {
       grid-template-columns: 1fr;
       width: 90vw;
     }
+
+    .video_card{
+      margin-bottom: 2vh;
+      padding-top: 0;
+    }
+
     .portfolio_container .video_grid p,
     .portfolio_container .video_grid h3 {
       width: 85vw;

@@ -5,12 +5,7 @@ export const FooterStyles = css`
   ${'' /* Footer Stlyes */}
 
   .footer_bg {
-    background: linear-gradient(
-      180deg,
-      rgba(55, 55, 55, 1) 0%,
-      rgba(24, 24, 24, 1) 28%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(71,74,90,1) 0%, rgba(58,62,78,1) 35%, rgba(45,49,66,1) 100%);
     width: 100vw;
     height: 25vh;
   }

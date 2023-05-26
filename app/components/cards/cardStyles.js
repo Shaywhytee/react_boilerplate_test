@@ -20,12 +20,8 @@ export const CardStyles = css`
     justify-content: center;
     align-items: center;
     height: 70vh;
-    width: 60vw;
-    background: radial-gradient(
-      circle,
-      rgba(79, 209, 224, 1) 0%,
-      rgba(230, 230, 230, 1) 49%
-    );
+    width: 100vw;
+    background-color: #3E5372;
   }
 
   .about_container .deck {
@@ -63,6 +59,10 @@ export const CardStyles = css`
       height: 50px;
       flex-basis: 50%;
       align-self: flex-end
+    }
+    .about_container .deck_wrapper {
+      padding-bottom: 30vh;
+      height: 90vh;
     }
   }
 `;

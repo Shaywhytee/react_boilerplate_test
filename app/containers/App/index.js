@@ -37,7 +37,7 @@ export default function App() {
               <img src={AppBackground} alt="background" className="app_bg" />
               <NavBar />
               <Switch>
-                <Route exact path="/home" component={HomePage} />
+                <Route exact path="/" component={HomePage} />
                 <Route path="/about" component={About} />
                 <Route path="/portfolio" component={Portfolio} />
                 <Route path="/contact" component={Contact} />
