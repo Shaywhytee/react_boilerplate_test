@@ -1,10 +1,10 @@
-import React, { useContext} from "react";
-import { ContentContext } from '../../utils/content';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { css } from "styled-components";
+import { css } from 'styled-components';
+import { ContentContext } from '../../utils/content';
 
 function HeroSection() {
-  const contentData = useContext(ContentContext);
+  const { contentData } = useContext(ContentContext);
   const heroText = contentData.find(item => item.name === 'heroText');
 
   if (!heroText) {
@@ -12,19 +12,19 @@ function HeroSection() {
   }
 
   return (
-  <>
-  <div className="hero_text_wrapper">
-    <h1>{heroText.title}</h1>
-    <p>{heroText.content}</p>
-  </div>
-  <div className="consoltation_container">
-    <h1>Set up a consoltation</h1>
-    <Link to="/contact" className="consoltation_btn">
-      Here
-    </Link>
-  </div>
-  </>
-  )
+    <>
+      <div className="hero_text_wrapper">
+        <h1>{heroText.title}</h1>
+        <p>{heroText.content}</p>
+      </div>
+      <div className="consoltation_container">
+        <h1>Set up a consoltation</h1>
+        <Link to="/contact" className="consoltation_btn">
+          Here
+        </Link>
+      </div>
+    </>
+  );
 }
 
 export const HeroSectionStyles = css`
@@ -37,10 +37,10 @@ export const HeroSectionStyles = css`
     width: 100vw;
     height: 40vh;
     text-align: center;
-    color: #C0BEC6;
+    color: #c0bec6;
     padding: 20vh 2vw;
     z-index: 0;
-    background-color: #2D3142;
+    background-color: #2d3142;
   }
 
   .hero_text_wrapper h1 {
@@ -58,13 +58,13 @@ export const HeroSectionStyles = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #474A5A;
+    background-color: #474a5a;
     height: 10vh;
     width: 100vw;
     padding: 10vh 0;
   }
   .consoltation_container h1 {
-    color: #C0BEC6;
+    color: #c0bec6;
   }
 
   .consoltation_btn {
@@ -72,8 +72,8 @@ export const HeroSectionStyles = css`
     width: 10vw;
     min-width: 100px;
     background: none;
-    border: solid #C0BEC6;
-    color: #C0BEC6;
+    border: solid #c0bec6;
+    color: #c0bec6;
     transition: 0.5s;
     text-decoration: none;
     font-size: 1.5rem;
@@ -82,9 +82,9 @@ export const HeroSectionStyles = css`
   }
 
   .consoltation_btn:hover {
-    letter-spacing: .5vw;
-    color: #70B8FF;
-    border: solid #70B8FF;
+    letter-spacing: 0.5vw;
+    color: #70b8ff;
+    border: solid #70b8ff;
   }
 
   @media only screen and (max-width: 750px) {
@@ -103,5 +103,5 @@ export const HeroSectionStyles = css`
       line-height: 2vh;
     }
   }
-`
+`;
 export default HeroSection;

@@ -3,16 +3,26 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../images/Biggest.png';
 import { AuthContext } from '../../utils/authContext';
+import { ContentContext } from '../../utils/content';
+import AdminDropdown from './adminDropdown';
 
 function NavBar() {
   const { loggedIn, logout } = useContext(AuthContext);
+  const { photoUrls } = useContext(ContentContext);
+
+  const Icon = photoUrls[7];
+
+  if (photoUrls.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   const handleLogout = () => {
     // Perform logout actions
     localStorage.removeItem('token');
     logout();
   };
+
 
   return (
     <div className="nav_bg">
@@ -31,28 +41,7 @@ function NavBar() {
             </Link>
           </div>
           {loggedIn && (
-            <div className="nav_edit_btns">
-              <Link
-                to="/edit-home" 
-                className="nav_btn">
-                Edit Home
-              </Link>
-              <Link
-                to="/edit-about" 
-                className="nav_btn">
-                Edit About
-              </Link>
-              <Link 
-                to="/edit-portfolio" 
-                className="nav_btn">
-                Edit Portfolio
-              </Link>
-              <Link 
-                to="/edit-contact" 
-                className="nav_btn">
-                Edit Contact
-              </Link>
-            </div>
+            <AdminDropdown />
           )}
         </div>
         {loggedIn && (

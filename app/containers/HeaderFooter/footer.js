@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/button-has-type */
-import React from 'react';
+import React, { useContext } from 'react';
+import { ContentContext } from '../../utils/content';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import {
@@ -10,9 +11,17 @@ import {
   faTwitch,
   faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
-import Icon from '../../images/Biggest.png';
 
 function FooterNav() {
+  const { photoUrls } = useContext(ContentContext);
+
+  const Icon = photoUrls[7];
+
+  if (photoUrls.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+
   return (
     <div className="footer_bg">
       <div className="footer_wrapper">

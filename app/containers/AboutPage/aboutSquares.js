@@ -1,19 +1,21 @@
 import React, { useContext } from 'react';
-import { ContentContext } from '../../utils/content';
-import AlexJersey from '../../images/alex_jersey.jpg';
-import AlexComputerShot from '../../images/alex_computer_shot.jpg';
-import GroupPicture from '../../images/100t.jpg';
-import { SlideLeft, SlideRight } from '../../components/Misc/Slide';
 import { css } from 'styled-components';
+import { ContentContext } from '../../utils/content';
+import { SlideLeft, SlideRight } from '../../components/Misc/Slide';
 
 function AboutSquares() {
-  const contentData = useContext(ContentContext);
+  const { contentData, photoUrls } = useContext(ContentContext);
+
+  if (contentData.length === 0 || photoUrls.length === 0) {
+    return <div>Loading...</div>;
+  }
   const textBox1 = contentData.find(item => item.name === 'textBox1');
   const textBox2 = contentData.find(item => item.name === 'textBox2');
   const textBox3 = contentData.find(item => item.name === 'textBox3');
-  const pictureBox1 = contentData.find(item => item.name === 'pictureBox1');
-  const pictureBox2 = contentData.find(item => item.name === 'pictureBox2');
-  const pictureBox3 = contentData.find(item => item.name === 'pictureBox3');
+  const pictureBox1 = photoUrls[8];
+  const pictureBox2 = photoUrls[9];
+  const pictureBox3 = photoUrls[10];
+  console.log(photoUrls);
 
   if (
     !textBox1 ||
@@ -30,27 +32,30 @@ function AboutSquares() {
     <div className="squares">
       <SlideRight>
         <div className="about_square">
-          <p>This is a bunch of content that you will talk about yourself</p>
-          <img src={GroupPicture} className="group_picture" />
+          <h1>{textBox1.title}</h1>
+          <p>{textBox1.content}</p>
+          <img src={pictureBox1} className="group_picture" />
         </div>
       </SlideRight>
       <SlideLeft>
         <div className="about_square">
-          <img src={AlexComputerShot} className="gaming_picture" />
-          <p>This is a bunch of content that you will talk about yourself</p>
+          <img src={pictureBox2} className="gaming_picture" />
+          <p>{textBox2.content}</p>
+          <h1>{textBox2.title}</h1>
         </div>
       </SlideLeft>
       <SlideRight>
         <div className="about_square">
-          <p>This is a bunch of content that you will talk about yourself</p>
-          <img src={AlexJersey} className="jersey_picture" />
+          <h1>{textBox3.title}</h1>
+          <p>{textBox3.content}</p>
+          <img src={pictureBox3} className="jersey_picture" />
         </div>
       </SlideRight>
-  </div>
-  )
+    </div>
+  );
 }
 
-export const AboutSquareStyles = css `
+export const AboutSquareStyles = css`
   .squares {
     display: flex;
     flex-direction: column;
@@ -58,7 +63,7 @@ export const AboutSquareStyles = css `
     align-items: center;
     height: 100%;
     width: 100vw;
-    background-color: #2D3142;
+    background-color: #2d3142;
     padding-top: 20vh;
   }
 
@@ -67,11 +72,11 @@ export const AboutSquareStyles = css `
     justify-content: space-between;
     align-items: center;
     width: 80vw;
-    background-color: #3A3E4E;
+    background-color: #3a3e4e;
     text-align: center;
     transition: 0.5s;
     margin: 5vh 3vw;
-    color: #C0BEC6;
+    color: #c0bec6;
   }
 
   .about_square:nth-child(even) {
@@ -80,6 +85,11 @@ export const AboutSquareStyles = css `
 
   .about_square:nth-child(odd) {
     align-self: flex-end;
+  }
+
+  .about_square h1 {
+    width: 15vw;
+    min-width: 100px;
   }
 
   .about_square p {
@@ -108,7 +118,6 @@ export const AboutSquareStyles = css `
 
   @media only screen and (max-width: 750px) {
     .about_container .squares {
-      
     }
 
     .about_container .squares .about_square {
@@ -117,13 +126,20 @@ export const AboutSquareStyles = css `
       flex-direction: column;
     }
 
+    .about_square h1 {
+      width: 40vw;
+    }
+    .about_square p {
+      padding: 5vh 0;
+    }
+
     .about_container .squares .about_square .group_picture,
     .about_container .squares .about_square .gaming_picture,
-    .about_container .squares .about_square .jersey_picture{
+    .about_container .squares .about_square .jersey_picture {
       width: 100%;
       height: 100%;
     }
   }
-`
+`;
 
 export default AboutSquares;

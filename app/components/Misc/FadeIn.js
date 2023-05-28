@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 function FadeInView({ children }) {
   const elementRef = useRef(null);
 
   useEffect(() => {
     const element = elementRef.current;
-    element.classList.add("fade-in");
+    element.classList.add('fade-in');
   }, []);
 
   return (

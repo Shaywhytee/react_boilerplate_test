@@ -9,7 +9,11 @@ export function SlideUp({ children }) {
     setIsVisible(true);
   }, []);
 
-  return <div className={`${isVisible ? 'slide-up show' : 'slide-up'}`}>{children}</div>;
+  return (
+    <div className={`${isVisible ? 'slide-up show' : 'slide-up'}`}>
+      {children}
+    </div>
+  );
 }
 
 export function SlideDown({ children }) {
@@ -19,7 +23,11 @@ export function SlideDown({ children }) {
     setIsVisible(true);
   }, []);
 
-  return <div className={`${isVisible ? 'slide-down show' : 'slide-down'}`}>{children}</div>;
+  return (
+    <div className={`${isVisible ? 'slide-down show' : 'slide-down'}`}>
+      {children}
+    </div>
+  );
 }
 
 export function SlideLeft({ children }) {
@@ -28,8 +36,8 @@ export function SlideLeft({ children }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
@@ -37,7 +45,7 @@ export function SlideLeft({ children }) {
           }
         });
       },
-      { threshold: 0.5 } // Adjust the threshold value as needed
+      { threshold: 0.5 }, // Adjust the threshold value as needed
     );
 
     if (ref.current) {
@@ -52,7 +60,7 @@ export function SlideLeft({ children }) {
   }, []);
 
   return (
-    <div ref={ref} className={`slide-left ${isVisible ? "show" : ""}`}>
+    <div ref={ref} className={`slide-left ${isVisible ? 'show' : ''}`}>
       {children}
     </div>
   );
@@ -64,8 +72,8 @@ export function SlideRight({ children }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
@@ -73,7 +81,7 @@ export function SlideRight({ children }) {
           }
         });
       },
-      { threshold: 0.5 } // Adjust the threshold value as needed
+      { threshold: 0.5 }, // Adjust the threshold value as needed
     );
 
     if (ref.current) {
@@ -88,13 +96,11 @@ export function SlideRight({ children }) {
   }, []);
 
   return (
-    <div ref={ref} className={`slide-right ${isVisible ? "show" : ""}`}>
+    <div ref={ref} className={`slide-right ${isVisible ? 'show' : ''}`}>
       {children}
     </div>
   );
 }
-
-
 
 export const SlideStyles = css`
   /* SlideUp Animation */
@@ -126,23 +132,22 @@ export const SlideStyles = css`
     opacity: 0;
     transform: translateX(50px);
     transition: opacity 0.5s ease, transform 1s ease;
-}
+  }
 
-.slide-left.show {
-  opacity: 1;
-  transform: translateX(0);
-}
+  .slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
-/* SlideRight Animation */
-.slide-right {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.5s ease, transform 1s ease;
-}
+  /* SlideRight Animation */
+  .slide-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
 
-.slide-right.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-`
+  .slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;

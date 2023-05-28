@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 function FadeOutView({ children }) {
   const elementRef = useRef(null);
 
   useEffect(() => {
     const element = elementRef.current;
-    element.classList.add("fade-out");
+    element.classList.add('fade-out');
 
     return () => {
-      element.classList.remove("fade-out");
+      element.classList.remove('fade-out');
     };
   }, []);
 

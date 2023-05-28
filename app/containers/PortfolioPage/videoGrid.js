@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import EditDelete from "./editDelete";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import EditDelete from './editDelete';
 
 function VideoGrid() {
   const [videos, setVideos] = useState([]);
@@ -18,8 +18,8 @@ function VideoGrid() {
   }, []);
 
   const filteredVideos = activeFilter
-  ? videos.filter(video => video.video_tags.includes(activeFilter))
-  : videos;
+    ? videos.filter(video => video.video_tags.includes(activeFilter))
+    : videos;
 
   const handleFilterChange = filter => {
     setActiveFilter(filter);
@@ -40,24 +40,24 @@ function VideoGrid() {
         </select>
       </div>
       <div className="video_grid">
-      {filteredVideos.map(video => (
-        <div className="video_card" key={video.id}>
-          <h3>{video.video_name}</h3>
-          <iframe
-            title={video.video_name}
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${video.video_link}`}
-            frameBorder={0}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
+        {filteredVideos.map(video => (
+          <div className="video_card" key={video.id}>
+            <h3>{video.video_name}</h3>
+            <iframe
+              title={video.video_name}
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${video.video_link}`}
+              frameBorder={0}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
             />
-          <p>{video.video_description}</p>
-          <EditDelete />
-        </div>
-      ))}
-    </div>
-  </>
+            <p>{video.video_description}</p>
+            <EditDelete video={video} />
+          </div>
+        ))}
+      </div>
+    </>
   );
-};
+}
 export default VideoGrid;

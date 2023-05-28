@@ -7,7 +7,7 @@ export const NavBarStyles = css`
     position: absolute;
     width: 100vw;
     height: 15vh;
-    z-index: 1;
+    z-index: 3;
   }
 
   .nav_bar_wrapper {
@@ -37,12 +37,6 @@ export const NavBarStyles = css`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-  }
-
-  .nav_bar_wrapper .nav_btn_wrapper .nav_edit_btns {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
   }
 
   .nav_btn {
@@ -94,6 +88,26 @@ export const NavBarStyles = css`
     background-color: #EBE9EC;
     color: #3aaee1;
     letter-spacing: 1px;
+  }
+
+  .nav_bar_wrapper .nav_btn_wrapper .nav_dd {
+    width: 30vw;
+    height: 5vh;
+    background: none;
+    border: none;
+    color: #C0BEC6;
+    transition: 0.5s;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  .nav_bar_wrapper .nav_btn_wrapper .nav_dd:focus {
+    color: #3aaee1;
+    letter-spacing: 1px;
+  }
+  .nav_bar_wrapper .nav_btn_wrapper .nav_dd option {
+    font-size: 2rem;
+    text-align: center;
+    background: rgba(45,49,66,0.8);
   }
 
   @media only screen and (max-width: 750px) {
