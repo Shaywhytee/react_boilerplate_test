@@ -1,7 +1,7 @@
 # http://www.appveyor.com/docs/appveyor-yml
 
 # Set build version format here instead of in the admin panel
-version: '{build}'
+version: '2.0.1'
 
 # Do not build on gh tags
 skip_tags: true

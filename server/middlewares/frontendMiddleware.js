@@ -6,9 +6,13 @@
 module.exports = (app, options) => {
   const isProd = process.env.NODE_ENV === 'production';
 
+  const addProxyMiddleware = require('./addProxyMiddleware');
+  addProxyMiddleware(app);
+
   if (isProd) {
     const addProdMiddlewares = require('./addProdMiddlewares');
     addProdMiddlewares(app, options);
+    app.use(publicPath, express.static(outputPath));
   } else {
     const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
     const addDevMiddlewares = require('./addDevMiddlewares');
