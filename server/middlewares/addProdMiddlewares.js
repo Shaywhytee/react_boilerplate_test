@@ -12,6 +12,13 @@ module.exports = function addProdMiddlewares(app, options) {
   app.use(compression());
   app.use(publicPath, express.static(outputPath));
 
+  // Add headers middleware
+  app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://honesteditz.herokuapp.com', 'https://honesteditz.com');
+    // Set other headers as needed
+    next();
+  });
+
   app.get('*', (req, res) =>
     res.sendFile(path.resolve(outputPath, 'index.html')),
   );
