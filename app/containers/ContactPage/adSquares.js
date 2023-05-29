@@ -19,7 +19,7 @@ function AdSquares() {
   const adSquare1 = contentData.find(item => item.name === 'adSquare1');
   const adSquare2 = contentData.find(item => item.name === 'adSquare2');
   const adSquare3 = contentData.find(item => item.name === 'adSquare3');
-  const adSquare4 = contentData.find(item => item.name === 'asSquare4');
+  const adSquare4 = contentData.find(item => item.name === 'adSquare4');
 
   if (!adSquare1 || !adSquare2 || !adSquare3 || !adSquare4) {
     return null;

@@ -37,15 +37,15 @@ function Steps({ showHomePage }) {
     if (showSteps) {
       const timer1 = setTimeout(() => {
         setShowStep1(true);
-      }, 2000);
+      }, 1000);
 
       const timer2 = setTimeout(() => {
         setShowStep2(true);
-      }, 4000);
+      }, 2000);
 
       const timer3 = setTimeout(() => {
         setShowStep3(true);
-      }, 6000);
+      }, 3000);
 
       return () => {
         clearTimeout(timer1);
