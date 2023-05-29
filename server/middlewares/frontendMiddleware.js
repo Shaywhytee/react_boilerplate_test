@@ -1,23 +1,24 @@
-/* eslint-disable global-require */
+const path = require('path');
+const express = require('express');
+const compression = require('compression');
 
-/**
- * Front-end middleware
- */
-module.exports = (app, options) => {
-  const isProd = process.env.NODE_ENV === 'production';
+module.exports = function addProdMiddlewares(app, options) {
+  const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
 
-  const addProxyMiddleware = require('./addProxyMiddleware');
-  addProxyMiddleware(app);
+  // compression middleware compresses your server responses which makes them
+  // smaller (applies also to assets). You can read more about that technique
+  // and other good practices on official Express.js docs http://mxs.is/googmy
+  app.use(compression());
+  app.use(express.static(outputPath));
 
-  if (isProd) {
-    const addProdMiddlewares = require('./addProdMiddlewares');
-    addProdMiddlewares(app, options);
-    app.use(publicPath, express.static(outputPath));
-  } else {
-    const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
-    const addDevMiddlewares = require('./addDevMiddlewares');
-    addDevMiddlewares(app, webpackConfig);
-  }
+  // Add headers middleware
+  app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://honesteditz.herokuapp.com');
+    // Set other headers as needed
+    next();
+  });
 
-  return app;
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(outputPath, 'index.html')),
+  );
 };
