@@ -9,9 +9,9 @@ function AboutSquares() {
   if (contentData.length === 0 || photoUrls.length === 0) {
     return <div>Loading...</div>;
   }
-  const textBox1 = contentData.find(item => item.name === 'textBox1');
-  const textBox2 = contentData.find(item => item.name === 'textBox2');
-  const textBox3 = contentData.find(item => item.name === 'textBox3');
+  const textBox1 = contentData.find(item => item.name === 'textbox1');
+  const textBox2 = contentData.find(item => item.name === 'textbox2');
+  const textBox3 = contentData.find(item => item.name === 'textbox3');
   const pictureBox1 = photoUrls[8];
   const pictureBox2 = photoUrls[9];
   const pictureBox3 = photoUrls[10];
