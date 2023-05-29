@@ -2,6 +2,7 @@
 
 const express = require('express');
 const logger = require('./logger');
+const cors = require('cors');
 
 const argv = require('./argv');
 const port = require('./port');
@@ -13,6 +14,7 @@ const ngrok =
     : false;
 const { resolve } = require('path');
 const app = express();
+app.use(cors());
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
