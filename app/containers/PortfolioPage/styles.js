@@ -2,7 +2,6 @@
 import { css } from 'styled-components';
 
 export const PortfolioStyles = css`
-  /* Portfolio Styles */
   .portfolio_container {
     display: flex;
     flex-direction: column;
@@ -76,6 +75,7 @@ export const PortfolioStyles = css`
     padding: 1vh 1vw;
     background-color: #4F75A1;
   }
+
   .portfolio_container .video_grid iframe {
     width: 50vw;
     margin: 1vh 1vw;
@@ -109,6 +109,7 @@ export const PortfolioStyles = css`
     .portfolio_container {
       width: 100vw;
     }
+
     .portfolio_container .filters {
       flex-direction: column;
       justify-content: space-around;

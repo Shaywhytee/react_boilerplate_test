@@ -14,7 +14,7 @@ function AdminLogin() {
 
     try {
       const response = await axios.post(
-        'https://honesteditz-back.herokuapp.com//verify',
+        'https://honesteditz-back.herokuapp.com/verify',
         {
           username,
           password,
