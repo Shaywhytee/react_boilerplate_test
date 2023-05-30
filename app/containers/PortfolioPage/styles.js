@@ -13,6 +13,17 @@ export const PortfolioStyles = css`
     background-color: #2D3142;
     overflow: hidden;
   }
+  
+  .portfolio_container button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #C0BEC6;
+  }
+
+  .portfolio_container .active {
+    color: #70B8FF;
+  }
 
   .portfolio_container .filters {
     display: flex;
@@ -32,6 +43,7 @@ export const PortfolioStyles = css`
     text-align: center;
     color: #C0BEC6;
   }
+
   option {
     min-width: 75px;
     height: 40vh;
@@ -49,8 +61,8 @@ export const PortfolioStyles = css`
     color: #C0BEC6;
   }
 
-  .portfolio_container .video_grid h3 {
-
+  .portfolio_container .video_grid button {
+    color: #2D3142;
   }
 
   .portfolio_container .video_grid p {
@@ -70,6 +82,7 @@ export const PortfolioStyles = css`
     padding: 1vh 1vw;
     background-color: #3A3E4E;
   }
+
   .video_card {
     display: flex;
     flex-direction: column;
@@ -78,6 +91,7 @@ export const PortfolioStyles = css`
     padding-top: 10vh;
     background-color: #474A5A;
   }
+
   .video_card h3{
     display: flex;
     justify-content: center;
@@ -90,7 +104,6 @@ export const PortfolioStyles = css`
     line-height: 3vh;
     background-color: #4F75A1;
   }
-
 
   @media only screen and (max-width: 750px) {
     .portfolio_container {
