@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
-import { ContactTitleStyles } from './title';
-import { AdSquareStyles } from './adSquares';
+import { ContactTitleStyles } from '../../components/ContactPageComponents/title';
+import { AdSquareStyles } from '../../components/ContactPageComponents/adSquares';
 
 export const ContactStyles = css`
   .contact_container {

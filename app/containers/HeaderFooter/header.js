@@ -44,12 +44,14 @@ function NavBar() {
             <AdminDropdown />
           )}
         </div>
-        {loggedIn && (
-          <button type="button" onClick={handleLogout} className="nav_btn">Logout</button>
-        )}
-        <Link to="/contact" className="contact_btn">
-          Contact
-        </Link>
+        <div className='right_btns'>
+          <Link to="/contact" className="contact_btn">
+            <div className='contact_btn'>Contact</div>
+          </Link>
+          {loggedIn && (
+            <button type="button" onClick={handleLogout} className="logout_btn">Logout</button>
+            )}
+        </div>
       </div>
     </div>
   );

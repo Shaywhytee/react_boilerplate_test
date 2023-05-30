@@ -3,8 +3,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import CardDeck from '../../components/cards/cards';
-import AboutSquares from './aboutSquares';
+import CardDeck from '../../components/AboutPageComponents/Cards/cards';
+import AboutSquares from '../../components/AboutPageComponents/aboutSquares';
 
 
 function About() {

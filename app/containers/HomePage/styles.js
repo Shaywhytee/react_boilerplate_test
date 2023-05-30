@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
-import { StepsStyles } from './steps';
-import { HeroSectionStyles } from './heroText';
-import { TestimonialStyles } from './testimonial';
+import { StepsStyles } from '../../components/HomePageComponents/steps';
+import { HeroSectionStyles } from '../../components/HomePageComponents/heroText';
+import { TestimonialStyles } from '../../components/HomePageComponents/testimonial';
 
 export const HomePageStyles = css`
   ${'' /* Home Page Styles */}

@@ -67,7 +67,7 @@ export const FooterStyles = css`
     border: none;
     color: white;
     transition: 0.5s;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-decoration: none;
   }
 
@@ -81,7 +81,7 @@ export const FooterStyles = css`
     color: darkslategrey;
     margin-bottom: 1vh;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 750px) {
     .footer_bg {
       height: 40vh;
     }

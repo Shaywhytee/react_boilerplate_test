@@ -5,8 +5,8 @@ import { PortfolioStyles } from './containers/PortfolioPage/styles';
 import { HomePageStyles } from './containers/HomePage/styles';
 import { ContactStyles } from './containers/ContactPage/styles';
 import { AboutPageStyles } from './containers/AboutPage/styles';
-import { ContactFormStyles } from './components/ContactForm/contactFormStyles';
-import { CardStyles } from './components/cards/cardStyles';
+import { ContactFormStyles } from './components/ContactPageComponents/ContactForm/contactFormStyles';
+import { CardStyles } from './components/AboutPageComponents/Cards/cardStyles';
 import { AuthPagesStyles } from './containers/AuthPages/AuthStyles';
 import { SlideStyles } from './components/Misc/Slide';
 

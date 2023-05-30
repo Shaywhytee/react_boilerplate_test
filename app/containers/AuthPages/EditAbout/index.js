@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import About from '../../AboutPage';
-import AboutTextBoxes from './aboutTextBoxes';
-import AboutPictureBoxes from './aboutPictureBoxes';
+import AboutTextBoxes from '../../../components/Auth/AboutAuthComponents/aboutTextBoxes';
+import AboutPictureBoxes from '../../../components/Auth/AboutAuthComponents/aboutPictureBoxes';
 
 function EditAbout() {
 

@@ -71,7 +71,6 @@ export const AuthPagesStyles = css`
     width: 10vw;
     height: 5vh;
     background: #70B8FF;
-
   }
   .portfolio_container .video_grid .form_wrapper {
     position: fixed;
@@ -133,5 +132,27 @@ export const AuthPagesStyles = css`
     align-items: center;
     height: 90vh;
     width: 25vw;
+  }
+  @media only screen and (max-width : 1000px) {
+    .page_container form {
+      flex-direction: column;
+    }
+    .page_container label,
+    .page_container input,
+    .page_container textarea {
+      width: 80vw;
+    }
+    .page_container h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .page_container button {
+      width: 30vw;
+    }
+    .portfolio_container .video_grid button {
+      width: 20vw;
+      height: 5vh;
+      background: #70B8FF;
+    }
   }
 `;

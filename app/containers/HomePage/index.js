@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import HomeIntro from '../../components/Homepage/HomeIntro';
-import Testimonial from './testimonial';
-import HeroSection from './heroText';
-import Steps from './steps';
+import HomeIntro from '../../components/HomePageComponents/HomeIntro';
+import Testimonial from '../../components/HomePageComponents/testimonial';
+import HeroSection from '../../components/HomePageComponents/heroText';
+import Steps from '../../components/HomePageComponents/steps';
 
 function HomePage() {
   const [showHomePage, setShowHomePage] = useState(false);

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
-import { AboutSquareStyles } from './aboutSquares';
+import { AboutSquareStyles } from '../../components/AboutPageComponents/aboutSquares';
 
 export const AboutPageStyles = css`
   ${'' /* About page styles */}

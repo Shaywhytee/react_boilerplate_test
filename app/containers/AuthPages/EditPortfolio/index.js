@@ -9,14 +9,18 @@ function EditPortfolio() {
   const [newVideoSize, setNewVideoSize] = useState('');
   const [newVideoTags, setNewVideoTags] = useState('');
   const [newVideoLink, setNewVideoLink] = useState('');
-
+  const [newVideoCreator, setNewVideoCreator] = useState('');
+  
   function extractVideoId(videoLink) {
-    const url = new URL(videoLink);
-    const searchParams = new URLSearchParams(url.search);
-    return(searchParams.get('v'));
-  };
-  
-  
+    try {
+      const url = new URL(videoLink);
+      const searchParams = new URLSearchParams(url.search);
+      return searchParams.get('v');
+    } catch (error) {
+      console.error('Invalid video link:', error);
+      return '';
+    }
+  }
 
   const extractVideoInfo = async videoLink => {
     const videoId = extractVideoId(videoLink);
@@ -32,7 +36,6 @@ function EditPortfolio() {
         const videoInfo = data.items[0];
         const videoTitle = videoInfo.snippet.title;
         const videoLength = videoInfo.contentDetails.duration;
-        console.log(videoInfo.snippet.title);
         setNewVideoName(videoTitle);
         setNewVideoLength(videoLength);
         setNewVideoLink(videoId);
@@ -64,17 +67,12 @@ function EditPortfolio() {
             video_size: newVideoSize,
             video_tags: newVideoTags,
             video_link: newVideoLink,
+            video_creator: newVideoCreator,
           }),
         },
       );
 
       if (response.ok) {
-        setNewVideoName('');
-        setNewVideoDescription('');
-        setNewVideoLength('');
-        setNewVideoSize('');
-        setNewVideoTags('');
-        setNewVideoLink('');
         window.location.reload();
       } else {
         console.error('Failed to update portfolio', response.status);
@@ -87,7 +85,7 @@ function EditPortfolio() {
   return (
     <div>
       <div className="page_container">
-        <form onSubmit={saveChanges}>
+        <form>
           <label>
             <input
               type="text"
@@ -100,8 +98,20 @@ function EditPortfolio() {
             />
           Youtube Video Link
           </label>
+        </form>
+        <form onSubmit={saveChanges}>
           <label>
-            <input
+            <textarea
+              type="text"
+              placeholder="Video Title"
+              value={newVideoName}
+              onChange={e => setNewVideoName(e.target.value)}
+              name="videoTitle"
+            />
+          Video Title
+          </label>
+          <label>
+            <textarea
               type="text"
               placeholder="Video Description"
               onChange={e => setNewVideoDescription(e.target.value)}
@@ -117,6 +127,15 @@ function EditPortfolio() {
               name="videoTags"
             />
           Enter your video tags seperated by a comma.
+          </label>
+          <label>
+            <input
+              type="text"
+              placeholder="Video Creator"
+              onChange={e => setNewVideoCreator(e.target.value)}
+              name="videoCreator"
+            />
+          Enter your video creator.
           </label>
         </form>
         <button type="button" onClick={saveChanges}>

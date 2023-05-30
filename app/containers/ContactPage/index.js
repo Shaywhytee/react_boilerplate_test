@@ -3,8 +3,8 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 
-import ContactTitle from './title';
-import AdSquares from './adSquares';
+import ContactTitle from '../../components/ContactPageComponents/title';
+import AdSquares from '../../components/ContactPageComponents/adSquares';
 
 function Contact() {
 

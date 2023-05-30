@@ -14,7 +14,6 @@ module.exports = function addProdMiddlewares(app, options) {
   // Add headers middleware
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://honesteditz.herokuapp.com');
-    // Set other headers as needed
     next();
   });
 

@@ -2,7 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-console */
 import React from 'react';
-import VideoGrid from './videoGrid';
+import VideoGrid from '../../components/PortfolioPageComponents/videoGrid';
 
 
 function Portfolio() {

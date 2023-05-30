@@ -71,7 +71,17 @@ export const NavBarStyles = css`
     letter-spacing: 1px;
   }
 
+  .right_btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .logout_btn,
   .contact_btn {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     width: 10vw;
     height: 5vh;
     background: #3aaee1;
@@ -80,10 +90,10 @@ export const NavBarStyles = css`
     transition: 0.5s;
     font-size: 1.5rem;
     text-decoration: none;
-    text-align: center;
-    line-height: 5vh;
+    text-align: center; 
   }
 
+  .logout_btn:hover,
   .contact_btn:hover {
     background-color: #EBE9EC;
     color: #3aaee1;
@@ -136,10 +146,20 @@ export const NavBarStyles = css`
       text-align: center;
     }
 
-    .nav_bar_wrapper .contact_btn {
-      text-align: center;
-      line-height: 5vh;
-      min-width: 0px;
+    .right_btns {
+      flex-direction: column;
+    }
+
+    .right_btns .logout_btn,
+    .right_btns .contact_btn {
+      width: 20vw;
+      min-width: 75px;
+      height: 5vh;
+    }
+
+    .nav_bar_wrapper .nav_btn_wrapper .nav_dd {
+      align-self: flex-start;
+      width: 60vw;
     }
   }
 
