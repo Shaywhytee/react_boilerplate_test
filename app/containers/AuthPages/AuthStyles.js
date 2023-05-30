@@ -16,6 +16,11 @@ export const AuthPagesStyles = css`
     padding-bottom: 10vh;
   }
 
+  #login_page {
+    margin-bottom: 0;
+    height: 75vh;
+  }
+
   .page_container h1 {
     display: flex;
     justify-content: space-around;
