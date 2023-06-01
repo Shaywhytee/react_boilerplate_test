@@ -1,19 +1,27 @@
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 
 module.exports = function addProdMiddlewares(app, options) {
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'build');
 
-  // compression middleware compresses your server responses which makes them
-  // smaller (applies also to assets). You can read more about that technique
-  // and other good practices on official Express.js docs http://mxs.is/googmy
+  // Apply rate limiting
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: 'Too many requests from this IP, please try again later.',
+  });
+  app.use(limiter);
+
   app.use(compression());
   app.use(express.static(outputPath));
-
-  // Add headers middleware
+  // Request Headers
   app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://honesteditz.herokuapp.com');
+    res.setHeader(
+      'Access-Control-Allow-Origin',
+      'https://honesteditz.herokuapp.com',
+    );
     next();
   });
 
