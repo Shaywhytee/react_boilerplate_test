@@ -1,7 +1,11 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { handleEditConfirmation } from './HandleEditConfirmation';
+
+HandleEditForm.propTypes = {
+  selectedVideo: PropTypes.node.isRequired,
+  setSelectedVideo: PropTypes.node.isRequired,
+};
 
 function HandleEditForm({ selectedVideo, setSelectedVideo }) {
   const [editedVideo, setEditedVideo] = useState({

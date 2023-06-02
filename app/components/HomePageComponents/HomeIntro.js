@@ -1,9 +1,13 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import FadeInView from '../Misc/FadeIn';
 import FadeOutView from '../Misc/FadeOut';
 import LoadingSpinner from '../Misc/loadingSpinner';
 import { ContentContext } from '../../utils/content';
+
+HomeIntro.propTypes = {
+  onExploreClick: PropTypes.node.isRequired,
+};
 
 function HomeIntro({ onExploreClick }) {
   const [isExplore, setIsExplore] = useState(false);

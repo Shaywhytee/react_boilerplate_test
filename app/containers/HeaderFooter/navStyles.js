@@ -135,9 +135,6 @@ export const NavBarStyles = css`
       width: 15vw;
     }
 
-    .nav_bar_wrapper .nav_btn_wrapper .nav_user_btns {
-    }
-
     .nav_bar_wrapper .nav_btn_wrapper .nav_user_btns .nav_btn {
       font-size: 1.3rem;
       width: 20vw;

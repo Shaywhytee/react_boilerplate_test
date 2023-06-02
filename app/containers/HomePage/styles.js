@@ -13,12 +13,8 @@ export const HomePageStyles = css`
     background-color: #e6e6e6;
   }
 
-  .fade-out{
-    z-index 4;
-  }
-
   .intro_container,
-  .intro_container fade_out {
+  .intro_container .fade_out {
     display: flex;
     flex-direction: column;
     justify-content: space-around;

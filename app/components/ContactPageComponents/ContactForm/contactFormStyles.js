@@ -4,14 +4,13 @@ export const ContactFormStyles = css`
   .form_container {
     position: fixed;
     top: 0%;
-    right
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
-    z-index 4;
+    z-index: 4;
   }
 
   .form_container form {
@@ -28,9 +27,9 @@ export const ContactFormStyles = css`
     width: 80vw;
     text-align: center;
     font-size: 2rem;
-    background: #2D3142;
-    border-bottom0: none;
-    color: #EBE9EC;
+    background: #2d3142;
+    border-bottom: none;
+    color: #ebe9ec;
     transition: 0.5s ease-in-out;
   }
 
@@ -39,9 +38,9 @@ export const ContactFormStyles = css`
     width: 80vw;
     text-align: center;
     font-size: 2rem;
-    background: #2D3142;
+    background: #2d3142;
     border: none;
-    color: #EBE9EC;
+    color: #ebe9ec;
     transition: 0.5s ease-in-out;
   }
 
@@ -49,8 +48,8 @@ export const ContactFormStyles = css`
     height: 6vh;
     width: 80vw;
     font-size: 2rem;
-    background: #2D3142;
-    color: #EBE9EC;
+    background: #2d3142;
+    color: #ebe9ec;
     transition: 0.5s ease-in-out;
   }
 
@@ -78,10 +77,10 @@ export const ContactFormStyles = css`
     width: 30vw;
     text-align: center;
     border: none;
-    color: #EBE9EC;
+    color: #ebe9ec;
     font-size: 1.5rem;
     font-weight: 900;
-    background: #474A5A;
+    background: #474a5a;
     transition: 0.5s ease-in-out;
     margin: 0;
   }
@@ -92,15 +91,15 @@ export const ContactFormStyles = css`
     border: solid #616271;
     font-size: 1.5rem;
     font-weight: 900;
-    color: #EBE9EC;
-    background: #474A5A;
+    color: #ebe9ec;
+    background: #474a5a;
     transition: 0.5s ease-in-out;
     margin: 0;
   }
 
   .form_container .confirmation_wrapper button:hover {
     border: solid 2px white;
-    background-color: #70B8FF;
+    background-color: #70b8ff;
     color: white;
   }
 
@@ -112,12 +111,12 @@ export const ContactFormStyles = css`
     .form_container textarea {
       height: 60vh;
       border: none;
-      color: #EBE9EC;
+      color: #ebe9ec;
     }
     .form_container input {
       height: 10vh;
       border: none;
-      color: #EBE9EC;
+      color: #ebe9ec;
     }
     .form_container button {
       height: 10vh;

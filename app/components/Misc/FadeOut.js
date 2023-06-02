@@ -1,4 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+
+FadeOutView.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 function FadeOutView({ children }) {
   const elementRef = useRef(null);

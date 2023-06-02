@@ -1,4 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+
+FadeInView.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 function FadeInView({ children }) {
   const elementRef = useRef(null);

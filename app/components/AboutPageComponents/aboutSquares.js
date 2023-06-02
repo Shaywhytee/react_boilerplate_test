@@ -116,9 +116,6 @@ export const AboutSquareStyles = css`
   }
 
   @media only screen and (max-width: 750px) {
-    .about_container .squares {
-    }
-
     .about_container .squares .about_square {
       width: 85vw;
       height: 100%;

@@ -14,7 +14,6 @@ export const CardStyles = css`
   }
 
   @keyframes bounce-in {
-
     0% {
       transform: scale(0.9) rotate(5deg) translate(-20px, -50px);
       opacity: 0;
@@ -23,7 +22,7 @@ export const CardStyles = css`
     25% {
       transform: scale(1) rotate(10deg) translate(-50px, -80px);
       opacity: 0.6;
-      top: 0%
+      top: 0%;
     }
     50% {
       transform: rotate(5deg) translate(-20px, -50px);
@@ -79,7 +78,7 @@ export const CardStyles = css`
   }
 
   .deck_wrapper .card img {
-    width 20vw;
+    width: 20vw;
   }
 
   .deck_wrapper {
@@ -88,7 +87,7 @@ export const CardStyles = css`
     align-items: center;
     height: 70vh;
     width: 100vw;
-    background-color: #3E5372;
+    background-color: #3e5372;
     overflow: hidden;
   }
 

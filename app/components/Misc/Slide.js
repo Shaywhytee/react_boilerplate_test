@@ -1,6 +1,20 @@
 import React, { useEffect, useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 import { css } from 'styled-components';
+
+SlideUp.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+SlideDown.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+SlideLeft.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+SlideRight.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export function SlideUp({ children }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -81,7 +95,7 @@ export function SlideRight({ children }) {
           }
         });
       },
-      { threshold: 0.5 }, // Adjust the threshold value as needed
+      { threshold: 0.5 },
     );
 
     if (ref.current) {

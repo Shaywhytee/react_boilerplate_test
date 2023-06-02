@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -10,7 +11,10 @@ import {
 import { SlideUp } from '../Misc/Slide';
 import { ContentContext } from '../../utils/content';
 
-// eslint-disable-next-line react/prop-types
+Steps.propTypes = {
+  showHomePage: PropTypes.node.isRequired,
+};
+
 function Steps({ showHomePage }) {
   const { contentData } = useContext(ContentContext);
   const steps = contentData.find(item => item.name === 'steps');
