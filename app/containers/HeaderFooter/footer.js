@@ -24,7 +24,7 @@ function FooterNav() {
         <img src={Icon} className="footer_icon_wrapper" alt="icon" />
         <div className="footer_links_wrapper">
           <div className="footer_btn_wrapper">
-            <Link to="/home" className="footer_btn">
+            <Link to="/" className="footer_btn">
               Home
             </Link>
             <Link to="/about" className="footer_btn">

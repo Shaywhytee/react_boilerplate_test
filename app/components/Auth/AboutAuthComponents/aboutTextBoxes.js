@@ -28,9 +28,9 @@ function AboutTextBoxes() {
 
       if (response.ok) {
         const data = await response.json();
-        const textBox1Text = data.find(item => item.name === 'textBox1');
-        const textBox2Text = data.find(item => item.name === 'textBox2');
-        const textBox3Text = data.find(item => item.name === 'textBox3');
+        const textBox1Text = data.find(item => item.name === 'textbox1');
+        const textBox2Text = data.find(item => item.name === 'textbox2');
+        const textBox3Text = data.find(item => item.name === 'textbox3');
         if (textBox1Text) {
           setNewTextBox1Title(textBox1Text.title);
           setNewTextBox1(textBox1Text.content);
@@ -65,19 +65,19 @@ function AboutTextBoxes() {
           body: JSON.stringify({
             changes: [
               {
-                name: 'textBox1',
+                name: 'textbox1',
                 title: newTextBox1Title,
                 content: newTextBox1Content,
                 link: '',
               },
               {
-                name: 'textBox2',
+                name: 'textbox2',
                 title: newTextBox2Title,
                 content: newTextBox2Content,
                 link: '',
               },
               {
-                name: 'textBox3',
+                name: 'textbox3',
                 title: newTextBox3Title,
                 content: newTextBox3Content,
                 link: '',
