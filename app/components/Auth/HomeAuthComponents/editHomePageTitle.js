@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Alert from '../../Misc/Alert';
 
 function EditHomePageTitle() {
-
   const [newHeroTitle, setNewHeroTitle] = useState('');
   const [newHeroContent, setNewHeroContent] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-    useEffect(() => {
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -29,10 +30,10 @@ function EditHomePageTitle() {
           setNewHeroContent(heroText.content);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -65,10 +66,10 @@ function EditHomePageTitle() {
         setNewHeroContent('');
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Couldnt updating content:', error);
+      setErrorMessage('Couldnt updating content:', error);
     }
   };
 
@@ -84,7 +85,7 @@ function EditHomePageTitle() {
             onChange={e => setNewHeroTitle(e.target.value)}
             name="heroTitle"
           />
-        Hero Box Title
+          Hero Box Title
         </label>
         <label>
           <textarea
@@ -94,14 +95,17 @@ function EditHomePageTitle() {
             onChange={e => setNewHeroContent(e.target.value)}
             name="heroContent"
           />
-        Hero Box Content
+          Hero Box Content
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
         Save
       </button>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
   );
-};
+}
 
 export default EditHomePageTitle;

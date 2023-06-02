@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Alert from '../../Misc/Alert';
 
 function AboutTextBoxes() {
   const [newTextBox1Title, setNewTextBox1Title] = useState('');
@@ -7,6 +8,7 @@ function AboutTextBoxes() {
   const [newTextBox2Content, setNewTextBox2] = useState('');
   const [newTextBox3Title, setNewTextBox3Title] = useState('');
   const [newTextBox3Content, setNewTextBox3] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -42,10 +44,10 @@ function AboutTextBoxes() {
           setNewTextBox3(textBox3Text.content);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -94,13 +96,13 @@ function AboutTextBoxes() {
         setNewTextBox3('');
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Error updating content:', error);
+      setErrorMessage('Error updating content:', error);
     }
   };
-  
+
   return (
     <>
       <h1>About Text Boxes</h1>
@@ -111,8 +113,9 @@ function AboutTextBoxes() {
             placeholder="Text Box 1 Title"
             value={newTextBox1Title}
             onChange={e => setNewTextBox1Title(e.target.value)}
-            name="textBoxTitle" />
-        Text Box 1 Title
+            name="textBoxTitle"
+          />
+          Text Box 1 Title
         </label>
         <label>
           <textarea
@@ -120,8 +123,9 @@ function AboutTextBoxes() {
             placeholder="Text Box 1 Content"
             value={newTextBox1Content}
             onChange={e => setNewTextBox1(e.target.value)}
-            name="textBoxContent" />
-        Text Box 1 Content
+            name="textBoxContent"
+          />
+          Text Box 1 Content
         </label>
       </form>
       <form onSubmit={saveChanges}>
@@ -131,8 +135,9 @@ function AboutTextBoxes() {
             placeholder="Text Box2 Title"
             value={newTextBox2Title}
             onChange={e => setNewTextBox2Title(e.target.value)}
-            name="textBoxTitle" />
-        Text Box 2 Title
+            name="textBoxTitle"
+          />
+          Text Box 2 Title
         </label>
         <label>
           <textarea
@@ -140,8 +145,9 @@ function AboutTextBoxes() {
             placeholder="Text Box 2 Content"
             value={newTextBox2Content}
             onChange={e => setNewTextBox2(e.target.value)}
-            name="textBoxContent" />
-        Text Box 2 Content
+            name="textBoxContent"
+          />
+          Text Box 2 Content
         </label>
       </form>
       <form onSubmit={saveChanges}>
@@ -151,8 +157,9 @@ function AboutTextBoxes() {
             placeholder="Text Box 3 Title"
             value={newTextBox3Title}
             onChange={e => setNewTextBox3Title(e.target.value)}
-            name="textBoxTitle" />
-        Text Box 3 Title
+            name="textBoxTitle"
+          />
+          Text Box 3 Title
         </label>
         <label>
           <textarea
@@ -160,15 +167,19 @@ function AboutTextBoxes() {
             placeholder="Text Box 3 Content"
             value={newTextBox3Content}
             onChange={e => setNewTextBox3(e.target.value)}
-            name="textBoxContent" />
-        Text Box 3 Content
+            name="textBoxContent"
+          />
+          Text Box 3 Content
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
         Save
       </button>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
   );
-};
+}
 
 export default AboutTextBoxes;

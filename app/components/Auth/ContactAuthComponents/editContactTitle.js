@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import EditContactBg from "./editContactBackground";
+import React, { useState, useEffect } from 'react';
+import EditContactBg from './editContactBackground';
+import Alert from '../../Misc/Alert';
 
 function EditContactTitle() {
   const [newContactTitle, setNewContactTitle] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -28,10 +30,10 @@ function EditContactTitle() {
           setNewContactTitle(contactTitle.title);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -60,14 +62,14 @@ function EditContactTitle() {
       if (response.ok) {
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Error updating content:', error);
+      setErrorMessage('Error updating content:', error);
     }
   };
 
-  return(
+  return (
     <>
       <h1>Title Section</h1>
       <form onSubmit={saveChanges}>
@@ -79,15 +81,18 @@ function EditContactTitle() {
             onChange={e => setNewContactTitle(e.target.value)}
             name="contactTitle"
           />
-        Contact Title
+          Contact Title
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
         Save
       </button>
       <EditContactBg />
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
   );
-};
+}
 
 export default EditContactTitle;

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import EditClientPhoto from "./editClientPhotos";
+import React, { useState, useEffect } from 'react';
+import EditClientPhoto from './editClientPhotos';
+import Alert from '../../Misc/Alert';
 
 function EditTestimonials() {
   const [newTestimonial1Title, setNewTestimonial1Title] = useState('');
@@ -11,6 +12,7 @@ function EditTestimonials() {
   const [newTestimonial3Title, setNewTestimonial3Title] = useState('');
   const [newTestimonial3Content, setNewTestimonial3Content] = useState('');
   const [newTestimonial3Link, setNewTestimonial3Link] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -49,10 +51,10 @@ function EditTestimonials() {
           setNewTestimonial3Link(client3Text.link);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -72,21 +74,21 @@ function EditTestimonials() {
               {
                 name: 'client1',
                 title: newTestimonial1Title,
-                content: newTestimonial1Content, 
-                link: newTestimonial1Link
-               },
+                content: newTestimonial1Content,
+                link: newTestimonial1Link,
+              },
               {
                 name: 'client2',
                 title: newTestimonial2Title,
-                content: newTestimonial2Content, 
-                link: newTestimonial2Link
-               },
+                content: newTestimonial2Content,
+                link: newTestimonial2Link,
+              },
               {
                 name: 'client3',
                 title: newTestimonial3Title,
-                content: newTestimonial3Content, 
-                link: newTestimonial3Link
-               },
+                content: newTestimonial3Content,
+                link: newTestimonial3Link,
+              },
             ],
           }),
         },
@@ -95,10 +97,10 @@ function EditTestimonials() {
       if (response.ok) {
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Couldnt updating content:', error);
+      setErrorMessage('Couldnt updating content:', error);
     }
   };
 
@@ -113,8 +115,8 @@ function EditTestimonials() {
             value={newTestimonial1Content}
             onChange={e => setNewTestimonial1Content(e.target.value)}
             name="testimonialTitle"
-            />
-        Testimonial 1
+          />
+          Testimonial 1
         </label>
         <label>
           <textarea
@@ -123,8 +125,8 @@ function EditTestimonials() {
             value={newTestimonial2Content}
             onChange={e => setNewTestimonial2Content(e.target.value)}
             name="testimonialTitle"
-            />
-        Testimonial 2
+          />
+          Testimonial 2
         </label>
         <label>
           <textarea
@@ -133,8 +135,8 @@ function EditTestimonials() {
             value={newTestimonial3Content}
             onChange={e => setNewTestimonial3Content(e.target.value)}
             name="testimonialTitle"
-            />
-        Testimonial 3
+          />
+          Testimonial 3
         </label>
       </form>
       <form>
@@ -145,8 +147,8 @@ function EditTestimonials() {
             value={newTestimonial1Title}
             onChange={e => setNewTestimonial1Title(e.target.value)}
             name="clientTitle"
-            />
-        Client 1
+          />
+          Client 1
         </label>
         <label>
           <input
@@ -155,8 +157,8 @@ function EditTestimonials() {
             value={newTestimonial2Title}
             onChange={e => setNewTestimonial2Title(e.target.value)}
             name="clientTitle"
-            />
-        Client 2
+          />
+          Client 2
         </label>
         <label>
           <input
@@ -165,8 +167,8 @@ function EditTestimonials() {
             value={newTestimonial3Title}
             onChange={e => setNewTestimonial3Title(e.target.value)}
             name="clientTitle"
-            />
-        Client 3
+          />
+          Client 3
         </label>
       </form>
       <form>
@@ -177,8 +179,8 @@ function EditTestimonials() {
             value={newTestimonial1Link}
             onChange={e => setNewTestimonial1Link(e.target.value)}
             name="testimonialTitle"
-            />
-        Client 1 Youtube Link
+          />
+          Client 1 Youtube Link
         </label>
         <label>
           <input
@@ -187,8 +189,8 @@ function EditTestimonials() {
             value={newTestimonial2Link}
             onChange={e => setNewTestimonial2Link(e.target.value)}
             name="testimonialTitle"
-            />
-        Client 2 Youtube Link
+          />
+          Client 2 Youtube Link
         </label>
         <label>
           <input
@@ -197,17 +199,19 @@ function EditTestimonials() {
             value={newTestimonial3Link}
             onChange={e => setNewTestimonial3Link(e.target.value)}
             name="testimonialTitle"
-            />
-        Client 3 Youtube Link
+          />
+          Client 3 Youtube Link
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
-      Save
+        Save
       </button>
       <EditClientPhoto />
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
-
   );
-};
+}
 
 export default EditTestimonials;

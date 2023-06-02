@@ -5,14 +5,18 @@ function NavigationDropdown() {
   const history = useHistory();
   const [selectedOption, setSelectedOption] = useState('');
 
-  const handleSelectChange = (e) => {
+  const handleSelectChange = e => {
     const selectedRoute = e.target.value;
     setSelectedOption(selectedRoute);
     history.push(selectedRoute);
   };
 
   return (
-    <select value={selectedOption} onChange={handleSelectChange} className="nav_dd">
+    <select
+      value={selectedOption}
+      onChange={handleSelectChange}
+      className="nav_dd"
+    >
       <option value="" disabled>
         Select a page
       </option>

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Alert from '../../Misc/Alert';
 
 function EditSteps() {
   const [newStepsTitle, setNewStepsTitle] = useState('');
   const [newStep1Title, setNewStep1Title] = useState('');
   const [newStep2Title, setNewStep2Title] = useState('');
   const [newStep3Title, setNewStep3Title] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -41,10 +43,10 @@ function EditSteps() {
           setNewStep3Title(step3Text.title);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -77,10 +79,10 @@ function EditSteps() {
         setNewStep3Title('');
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Couldnt updating content:', error);
+      setErrorMessage('Couldnt updating content:', error);
     }
   };
 
@@ -96,7 +98,7 @@ function EditSteps() {
             onChange={e => setNewStepsTitle(e.target.value)}
             name="stepsTitle"
           />
-        Steps Title Box
+          Steps Title Box
         </label>
       </form>
       <form onSubmit={saveChanges}>
@@ -108,7 +110,7 @@ function EditSteps() {
             onChange={e => setNewStep1Title(e.target.value)}
             name="step1Title"
           />
-        Step 1 Box
+          Step 1 Box
         </label>
         <label>
           <input
@@ -118,7 +120,7 @@ function EditSteps() {
             onChange={e => setNewStep2Title(e.target.value)}
             name="step2Title"
           />
-        Step 2 Box
+          Step 2 Box
         </label>
         <label>
           <input
@@ -128,14 +130,17 @@ function EditSteps() {
             onChange={e => setNewStep3Title(e.target.value)}
             name="step3Title"
           />
-        Step 3 Box
+          Step 3 Box
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
         Save
       </button>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
   );
-};
+}
 
 export default EditSteps;

@@ -1,3 +1,7 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
 import React, { useEffect, useState } from 'react';
 
 function BucketComponent() {
@@ -19,13 +23,15 @@ function BucketComponent() {
         'icon-512x512.png',
         'logo.png',
         'photo_box_1.jpg',
-        'photo_box_2.jpg'
+        'photo_box_2.jpg',
       ];
 
       const urls = [];
 
       for (const photoName of photoNames) {
-        const response = await fetch(`https://storage.googleapis.com/honest_editz_photos/${photoName}`);
+        const response = await fetch(
+          `https://storage.googleapis.com/honest_editz_photos/${photoName}`,
+        );
 
         if (response.ok) {
           const blob = await response.blob();

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 
 export const CardStyles = css`

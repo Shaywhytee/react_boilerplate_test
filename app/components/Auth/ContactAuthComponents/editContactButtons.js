@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Alert from '../../Misc/Alert';
 
 function EditContactButtons() {
   const [newDiscordLink, setNewDiscordLink] = useState('');
   const [newDiscordTitle, setNewDiscordTitle] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -29,10 +31,10 @@ function EditContactButtons() {
           setNewDiscordLink(discord.link);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
 
@@ -64,45 +66,46 @@ function EditContactButtons() {
         setNewDiscordTitle('');
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Error updating content:', error);
+      setErrorMessage('Error updating content:', error);
     }
   };
 
-
-  return(
-  <>
-    <h1>Contact Buttons Section</h1>
-    <form onSubmit={saveChanges}>
-      <label>
-        <input
-          type="text"
-          placeholder="Discord Link"
-          value={newDiscordLink}
-          onChange={e => setNewDiscordLink(e.target.value)}
-          name="discordLink"
-        />
-      Discord Link
-      </label>
-      <label>
-        <input
-          type="text"
-          placeholder="Discord Title"
-          value={newDiscordTitle}
-          onChange={e => setNewDiscordTitle(e.target.value)}
-          name="discordTitle"
-        />
-      Discord Button Title
-      </label>
-    </form>
-    <button type="button" onClick={saveChanges}>
-    Save
-    </button>
-  </>
-
+  return (
+    <>
+      <h1>Contact Buttons Section</h1>
+      <form onSubmit={saveChanges}>
+        <label>
+          <input
+            type="text"
+            placeholder="Discord Link"
+            value={newDiscordLink}
+            onChange={e => setNewDiscordLink(e.target.value)}
+            name="discordLink"
+          />
+          Discord Link
+        </label>
+        <label>
+          <input
+            type="text"
+            placeholder="Discord Title"
+            value={newDiscordTitle}
+            onChange={e => setNewDiscordTitle(e.target.value)}
+            name="discordTitle"
+          />
+          Discord Button Title
+        </label>
+      </form>
+      <button type="button" onClick={saveChanges}>
+        Save
+      </button>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
+    </>
   );
-};
+}
 
 export default EditContactButtons;

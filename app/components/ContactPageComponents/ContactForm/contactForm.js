@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-console */
-/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -26,7 +23,6 @@ function ContactForm() {
       );
       setShowConfirmation(true);
     } catch (error) {
-      console.error('Error sending email:', error);
       setResponseMessage('Failed to send email');
     }
   };
@@ -58,7 +54,9 @@ function ContactForm() {
       {showConfirmation && (
         <div className="confirmation_wrapper">
           {responseMessage && <p>{responseMessage}</p>}
-          <button onClick={handleOkClick}>Ok!</button>
+          <button type="button" onClick={handleOkClick}>
+            Ok!
+          </button>
         </div>
       )}
     </div>

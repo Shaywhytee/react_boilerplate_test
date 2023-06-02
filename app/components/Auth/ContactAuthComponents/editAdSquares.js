@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Alert from '../../Misc/Alert';
 
 function EditAdSquares() {
   const [newAdSquare1Title, setNewAdSquare1Title] = useState('');
   const [newAdSquare2Title, setNewAdSquare2Title] = useState('');
   const [newAdSquare3Title, setNewAdSquare3Title] = useState('');
   const [newAdSquare4Title, setNewAdSquare4Title] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -41,13 +43,12 @@ function EditAdSquares() {
           setNewAdSquare4Title(adSquare4Text.title);
         }
       } else {
-        console.error('Failed to fetch content:', response.status);
+        setErrorMessage('Failed to fetch content:', response.status);
       }
     } catch (error) {
-      console.error('Couldn\'t fetch content:', error);
+      setErrorMessage("Couldn't fetch content:", error);
     }
   };
-
 
   const saveChanges = async e => {
     e.preventDefault();
@@ -78,16 +79,16 @@ function EditAdSquares() {
         setNewAdSquare4Title('');
         window.location.reload();
       } else {
-        console.error('Failed to update content:', response.status);
+        setErrorMessage('Failed to update content:', response.status);
       }
     } catch (error) {
-      console.error('Error updating content:', error);
+      setErrorMessage('Error updating content:', error);
     }
   };
 
-  return(
+  return (
     <>
-    <h1>AdSquares Section</h1>
+      <h1>AdSquares Section</h1>
       <form onSubmit={saveChanges}>
         <label>
           <input
@@ -97,7 +98,7 @@ function EditAdSquares() {
             onChange={e => setNewAdSquare1Title(e.target.value)}
             name="adSquareText"
           />
-        Ad Square 1 Text
+          Ad Square 1 Text
         </label>
         <label>
           <input
@@ -107,7 +108,7 @@ function EditAdSquares() {
             onChange={e => setNewAdSquare2Title(e.target.value)}
             name="adSquareText"
           />
-        Ad Square 2 Text
+          Ad Square 2 Text
         </label>
         <label>
           <input
@@ -117,7 +118,7 @@ function EditAdSquares() {
             onChange={e => setNewAdSquare3Title(e.target.value)}
             name="adSquareText"
           />
-        Ad Square 3 Text
+          Ad Square 3 Text
         </label>
         <label>
           <input
@@ -127,14 +128,17 @@ function EditAdSquares() {
             onChange={e => setNewAdSquare4Title(e.target.value)}
             name="adSquareText"
           />
-        Ad Square 4
+          Ad Square 4
         </label>
       </form>
       <button type="button" onClick={saveChanges}>
         Save
       </button>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
     </>
   );
-};
+}
 
 export default EditAdSquares;

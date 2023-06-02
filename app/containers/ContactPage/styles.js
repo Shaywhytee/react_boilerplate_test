@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 import { ContactTitleStyles } from '../../components/ContactPageComponents/title';
 import { AdSquareStyles } from '../../components/ContactPageComponents/adSquares';
@@ -11,7 +10,7 @@ export const ContactStyles = css`
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    background-color: #2D3142;
+    background-color: #2d3142;
   }
 
   @media only screen and (max-width: 500px) {
