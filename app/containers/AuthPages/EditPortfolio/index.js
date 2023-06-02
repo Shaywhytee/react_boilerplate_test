@@ -1,23 +1,23 @@
-/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import Portfolio from '../../PortfolioPage';
+import Alert from '../../../components/Misc/Alert';
 
 function EditPortfolio() {
   const [newVideoName, setNewVideoName] = useState('');
   const [newVideoDescription, setNewVideoDescription] = useState('');
   const [newVideoLength, setNewVideoLength] = useState('');
-  const [newVideoSize, setNewVideoSize] = useState('');
   const [newVideoTags, setNewVideoTags] = useState('');
   const [newVideoLink, setNewVideoLink] = useState('');
   const [newVideoCreator, setNewVideoCreator] = useState('');
-  
+  const [errorMessage, setErrorMessage] = useState('');
+
   function extractVideoId(videoLink) {
     try {
       const url = new URL(videoLink);
       const searchParams = new URLSearchParams(url.search);
       return searchParams.get('v');
     } catch (error) {
-      console.error('Invalid video link:', error);
+      setErrorMessage('Invalid video link:', error);
       return '';
     }
   }
@@ -40,10 +40,10 @@ function EditPortfolio() {
         setNewVideoLength(videoLength);
         setNewVideoLink(videoId);
       } else {
-        console.error('Failed to fetch video information', response.status);
+        setErrorMessage('Failed to fetch video information', response.status);
       }
     } catch (error) {
-      console.error('Failed to fetch video information', error);
+      setErrorMessage('Failed to fetch video information', error);
     }
   };
 
@@ -64,7 +64,6 @@ function EditPortfolio() {
             video_name: newVideoName,
             video_description: newVideoDescription,
             video_length: newVideoLength,
-            video_size: newVideoSize,
             video_tags: newVideoTags,
             video_link: newVideoLink,
             video_creator: newVideoCreator,
@@ -75,10 +74,10 @@ function EditPortfolio() {
       if (response.ok) {
         window.location.reload();
       } else {
-        console.error('Failed to update portfolio', response.status);
+        setErrorMessage('Failed to update portfolio', response.status);
       }
     } catch (error) {
-      console.error('Failed to add the video', error);
+      setErrorMessage('Failed to add the video', error);
     }
   };
 
@@ -96,7 +95,7 @@ function EditPortfolio() {
               }}
               name="videoLink"
             />
-          Youtube Video Link
+            Youtube Video Link
           </label>
         </form>
         <form onSubmit={saveChanges}>
@@ -108,7 +107,7 @@ function EditPortfolio() {
               onChange={e => setNewVideoName(e.target.value)}
               name="videoTitle"
             />
-          Video Title
+            Video Title
           </label>
           <label>
             <textarea
@@ -117,7 +116,8 @@ function EditPortfolio() {
               onChange={e => setNewVideoDescription(e.target.value)}
               name="videoDescription"
             />
-          Enter your video description. This will appear below the video title.
+            Enter your video description. This will appear below the video
+            title.
           </label>
           <label>
             <input
@@ -126,7 +126,7 @@ function EditPortfolio() {
               onChange={e => setNewVideoTags(e.target.value)}
               name="videoTags"
             />
-          Enter your video tags seperated by a comma.
+            Enter your video tags seperated by a comma.
           </label>
           <label>
             <input
@@ -135,13 +135,16 @@ function EditPortfolio() {
               onChange={e => setNewVideoCreator(e.target.value)}
               name="videoCreator"
             />
-          Enter your video creator.
+            Enter your video creator.
           </label>
         </form>
         <button type="button" onClick={saveChanges}>
-        Submit
+          Submit
         </button>
       </div>
+      {errorMessage && (
+        <Alert message={errorMessage} onClose={() => setErrorMessage('')} />
+      )}
       <Portfolio />
     </div>
   );

@@ -1,9 +1,7 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 import { AboutSquareStyles } from '../../components/AboutPageComponents/aboutSquares';
 
 export const AboutPageStyles = css`
-  ${'' /* About page styles */}
   .about_container {
     display: flex;
     flex-direction: column;

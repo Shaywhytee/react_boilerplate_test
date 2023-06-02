@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 
-import { ContentContext } from '../../utils/content';
 import { css } from 'styled-components';
+import { ContentContext } from '../../utils/content';
 import { SlideLeft, SlideRight } from '../Misc/Slide';
-
 
 function Testimonial() {
   const { contentData, photoUrls } = useContext(ContentContext);
@@ -19,7 +18,14 @@ function Testimonial() {
   const Client2Logo = photoUrls[1];
   const Client3Logo = photoUrls[2];
 
-  if (!client1 || !client2 || !client3 || !Client1Logo || !Client2Logo || !Client3Logo) {
+  if (
+    !client1 ||
+    !client2 ||
+    !client3 ||
+    !Client1Logo ||
+    !Client2Logo ||
+    !Client3Logo
+  ) {
     return null;
   }
   return (
@@ -27,9 +33,7 @@ function Testimonial() {
       <SlideRight>
         <div className="testimonial_container">
           <div className="testimonial">
-            <p>
-              {client1.content}
-            </p>
+            <p>{client1.content}</p>
           </div>
           <div className="client">
             <img src={Client1Logo} alt="Client 1 Logo" />
@@ -38,7 +42,10 @@ function Testimonial() {
               <button
                 type="button"
                 onClick={() =>
-                  window.open(`https://www.youtube.com/${client1.link}`, '_blank')
+                  window.open(
+                    `https://www.youtube.com/${client1.link}`,
+                    '_blank',
+                  )
                 }
               >
                 {client1.link}
@@ -55,7 +62,10 @@ function Testimonial() {
               <button
                 type="button"
                 onClick={() =>
-                  window.open(`https://www.youtube.com/${client2.link}`, '_blank')
+                  window.open(
+                    `https://www.youtube.com/${client2.link}`,
+                    '_blank',
+                  )
                 }
               >
                 {client2.link}
@@ -64,18 +74,14 @@ function Testimonial() {
             <img src={Client2Logo} alt="Client 2 Logo" />
           </div>
           <div className="testimonial">
-            <p>
-              {client2.content}
-            </p>
+            <p>{client2.content}</p>
           </div>
         </div>
       </SlideLeft>
       <SlideRight>
-      <div className="testimonial_container">
+        <div className="testimonial_container">
           <div className="testimonial">
-            <p>
-              {client3.content}
-            </p>
+            <p>{client3.content}</p>
           </div>
           <div className="client">
             <img src={Client3Logo} alt="Client 3 Logo" />
@@ -84,7 +90,10 @@ function Testimonial() {
               <button
                 type="button"
                 onClick={() =>
-                  window.open(`https://www.youtube.com/${client3.link}`, '_blank')
+                  window.open(
+                    `https://www.youtube.com/${client3.link}`,
+                    '_blank',
+                  )
                 }
               >
                 {client3.link}

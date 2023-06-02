@@ -19,7 +19,6 @@ import EditContact from '../AuthPages/EditContact';
 import { AuthProvider } from '../../utils/authContext';
 import LoadingSpinner from '../../components/Misc/loadingSpinner';
 
-// Custom loading component
 const CustomLoading = () => <LoadingSpinner />;
 
 export default function App() {

@@ -1,6 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../utils/authContext';
@@ -23,7 +20,6 @@ function NavBar() {
     logout();
   };
 
-
   return (
     <div className="nav_bg">
       <div className="nav_bar_wrapper">
@@ -40,17 +36,17 @@ function NavBar() {
               Portfolio
             </Link>
           </div>
-          {loggedIn && (
-            <AdminDropdown />
-          )}
+          {loggedIn && <AdminDropdown />}
         </div>
-        <div className='right_btns'>
+        <div className="right_btns">
           <Link to="/contact" className="contact_btn">
-            <div className='contact_btn'>Contact</div>
+            <div className="contact_btn">Contact</div>
           </Link>
           {loggedIn && (
-            <button type="button" onClick={handleLogout} className="logout_btn">Logout</button>
-            )}
+            <button type="button" onClick={handleLogout} className="logout_btn">
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </div>

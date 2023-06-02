@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import React, { useContext, useState, useEffect } from 'react';
 import { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +10,7 @@ import {
 import { SlideUp } from '../Misc/Slide';
 import { ContentContext } from '../../utils/content';
 
+// eslint-disable-next-line react/prop-types
 function Steps({ showHomePage }) {
   const { contentData } = useContext(ContentContext);
   const steps = contentData.find(item => item.name === 'steps');
@@ -61,28 +63,27 @@ function Steps({ showHomePage }) {
 
   return (
     <div className="steps_wrapper">
-      {showHomePage &&
+      {showHomePage && (
         <>
-        {showSteps && (
-          <>
-          <SlideUp>
-            <h1>{steps.title}</h1>
-          </SlideUp>
-          <div className="steps_options">
+          {showSteps && (
+            <>
+              <SlideUp>
+                <h1>{steps.title}</h1>
+              </SlideUp>
+              <div className="steps_options">
                 {showStep1 ? (
-
                   <SlideUp>
-                  <div className="step">
-                    <h1>{step1.title}</h1>
-                    <FontAwesomeIcon
-                      icon={faMessage}
-                      color="rgba(192, 190, 198,1)"
-                      size="4x"
+                    <div className="step">
+                      <h1>{step1.title}</h1>
+                      <FontAwesomeIcon
+                        icon={faMessage}
+                        color="rgba(192, 190, 198,1)"
+                        size="4x"
                       />
-                  </div>
-                </SlideUp>
-                ): (
-                  <div className='step_filler'></div>
+                    </div>
+                  </SlideUp>
+                ) : (
+                  <div className="step_filler" />
                 )}
                 {showStep2 ? (
                   <SlideUp>
@@ -112,11 +113,11 @@ function Steps({ showHomePage }) {
                 ) : (
                   <div className="step_filler" />
                 )}
-          </div>
-          </>
+              </div>
+            </>
           )}
         </>
-      }
+      )}
     </div>
   );
 }
@@ -157,7 +158,7 @@ export const StepsStyles = css`
     width: 15vw;
     transition: 0.5s;
   }
-  
+
   .steps_wrapper .steps_options .step h1 {
     font-size: 2rem;
     font-weight: 700;

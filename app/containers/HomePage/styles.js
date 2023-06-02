@@ -1,11 +1,9 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 import { StepsStyles } from '../../components/HomePageComponents/steps';
 import { HeroSectionStyles } from '../../components/HomePageComponents/heroText';
 import { TestimonialStyles } from '../../components/HomePageComponents/testimonial';
 
 export const HomePageStyles = css`
-  ${'' /* Home Page Styles */}
   .home_container {
     display: flex;
     flex-direction: column;

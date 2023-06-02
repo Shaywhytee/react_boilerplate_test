@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import React, { createContext, useState, useEffect } from 'react';
 
@@ -21,9 +19,7 @@ export const AuthProvider = ({ children }) => {
     setLoggedIn(false);
   };
 
-  useEffect(() => {
-    console.log(loggedIn); // Log the value of loggedIn in subsequent renders
-  }, [loggedIn]);
+  useEffect(() => {}, [loggedIn]);
 
   return (
     <AuthContext.Provider value={{ token, login, logout, loggedIn }}>

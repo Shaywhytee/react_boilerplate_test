@@ -13,7 +13,7 @@ function HomePage() {
       setTimeout(() => {
         setShowHomePage(true);
       }, 1000);
-    } 
+    }
   }, []);
 
   const handleExploreClick = () => {

@@ -1,9 +1,6 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 
 export const ContactFormStyles = css`
-  ${'' /* Contact Form Styles */}
-
   .form_container {
     position: fixed;
     top: 0%;

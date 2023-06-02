@@ -17,7 +17,6 @@ function ContactTitle() {
   const discordButton = contentData.find(item => item.name === 'discordButton');
   const ContactTitleBg = photoUrls[3];
 
-
   const handleOptionClick = option => {
     setSelectedOption(option);
     if (option === 'discord') {
@@ -36,6 +35,7 @@ function ContactTitle() {
       <div className="form_wrapper">
         <div className="form_selection">
           <button
+            type="button"
             onClick={() => handleOptionClick('discord')}
             className={selectedOption === 'discord' ? 'active' : ''}
           >
@@ -43,6 +43,7 @@ function ContactTitle() {
             <p>{discordButton.title}</p>
           </button>
           <button
+            type="button"
             onClick={() => handleOptionClick('email')}
             className={selectedOption === 'email' ? 'active' : ''}
           >

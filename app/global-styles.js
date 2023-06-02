@@ -9,6 +9,7 @@ import { ContactFormStyles } from './components/ContactPageComponents/ContactFor
 import { CardStyles } from './components/AboutPageComponents/Cards/cardStyles';
 import { AuthPagesStyles } from './containers/AuthPages/AuthStyles';
 import { SlideStyles } from './components/Misc/Slide';
+import { AlertStyle } from './components/Misc/Alert';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -106,6 +107,7 @@ const GlobalStyle = createGlobalStyle`
   ${ContactFormStyles}
   ${AuthPagesStyles}
   ${SlideStyles}
+  ${AlertStyle}
 `;
 
 export default GlobalStyle;

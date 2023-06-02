@@ -1,11 +1,13 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 
 export const FooterStyles = css`
-  ${'' /* Footer Stlyes */}
-
   .footer_bg {
-    background: linear-gradient(180deg, rgba(71,74,90,1) 0%, rgba(58,62,78,1) 35%, rgba(45,49,66,1) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(71, 74, 90, 1) 0%,
+      rgba(58, 62, 78, 1) 35%,
+      rgba(45, 49, 66, 1) 100%
+    );
     width: 100vw;
     height: 25vh;
   }
@@ -44,14 +46,18 @@ export const FooterStyles = css`
   }
 
   .footer_social {
-    margin-right: 0.5vw;
-    margin-bottom: 0.5vh;
+    width: 7vw;
+    height: 10vh;
+    background: none;
+    border: none;
+    color: white;
     transition: 0.5s;
+    font-size: 1.5rem;
+    text-decoration: none;
   }
 
   .footer_social:hover {
-    color: white;
-    text-shadow: 3px 3px 3px black;
+    color: #3aaee1;
   }
 
   .footer_btn_wrapper {
@@ -108,7 +114,6 @@ export const FooterStyles = css`
 
     .footer_wrapper .footer_links_wrapper .footer_btn_wrapper {
       flex-direction: column;
-      
     }
 
     .footer_wrapper .footer_links_wrapper .footer_btn_wrapper .footer_btn {

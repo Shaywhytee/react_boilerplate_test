@@ -1,6 +1,6 @@
-/* eslint-disable prettier/prettier */
-import axios from 'axios';
+/* eslint-disable no-alert */
 
+import axios from 'axios';
 
 export async function handleDelete(videoId, onDelete) {
   try {
@@ -11,9 +11,9 @@ export async function handleDelete(videoId, onDelete) {
       onDelete(videoId);
       window.location.reload();
     } else {
-      console.error('Failed to delete video:', response.status);
+      window.alert('Failed to delete video:', response.status);
     }
   } catch (error) {
-    console.error('Error deleting video:', error);
+    window.alert('Error deleting video:', error);
   }
-};
+}

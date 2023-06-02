@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 
 export const AuthPagesStyles = css`
@@ -10,7 +9,7 @@ export const AuthPagesStyles = css`
     width: 100vw;
     height: 100%;
     min-height: 40vh;
-    background-color: #2D3142;
+    background-color: #2d3142;
     margin-bottom: 5vh;
     padding-top: 20vh;
     padding-bottom: 10vh;
@@ -27,8 +26,8 @@ export const AuthPagesStyles = css`
     align-items: center;
     width: 30vw;
     height: 5vh;
-    background: #3A3E4E;
-    color: #C0BEC6;
+    background: #3a3e4e;
+    color: #c0bec6;
   }
   .page_container form {
     display: flex;
@@ -37,45 +36,45 @@ export const AuthPagesStyles = css`
     width: 100vw;
     height: 100%;
     padding: 5vh 0;
-    background: #474A5A;
+    background: #474a5a;
   }
 
   .page_container label {
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: #C0BEC6;
+    color: #c0bec6;
   }
 
   .page_container input {
     width: 25vw;
     height: 7vh;
-    background: #3A3E4E;
-    color: #C0BEC6;
+    background: #3a3e4e;
+    color: #c0bec6;
     text-align: center;
     font-size: 1.5rem;
-    border: solid #2D3142;
+    border: solid #2d3142;
   }
 
   .page_container textarea {
     width: 20vw;
     height: 20vh;
-    background: #3A3E4E;
-    color: #C0BEC6;
+    background: #3a3e4e;
+    color: #c0bec6;
     text-align: center;
     font-size: 1.3rem;
-    border: solid #2D3142;
+    border: solid #2d3142;
   }
 
   .page_container button {
     width: 10vw;
     height: 5vh;
-    background: #70B8FF; 
+    background: #70b8ff;
   }
   .portfolio_container .video_grid button {
     width: 10vw;
     height: 5vh;
-    background: #70B8FF;
+    background: #70b8ff;
   }
   .portfolio_container .video_grid .form_wrapper {
     position: fixed;
@@ -95,21 +94,21 @@ export const AuthPagesStyles = css`
     align-items: center;
     height: 90vh;
     width: 60vw;
-    background-color: #2D3142;
+    background-color: #2d3142;
   }
-  .portfolio_container .video_grid .form_wrapper .edit_form input{
+  .portfolio_container .video_grid .form_wrapper .edit_form input {
     height: 5vh;
     width: 25vw;
-    color: #C0BEC6;
-    background: #3A3E4E;
-    border: solid #2D3142;
+    color: #c0bec6;
+    background: #3a3e4e;
+    border: solid #2d3142;
   }
-  .portfolio_container .video_grid .form_wrapper .edit_form textarea{
+  .portfolio_container .video_grid .form_wrapper .edit_form textarea {
     height: 20vh;
     width: 25vw;
-    color: #C0BEC6;
-    background: #3A3E4E;
-    border: solid #2D3142;
+    color: #c0bec6;
+    background: #3a3e4e;
+    border: solid #2d3142;
     font-size: 1.5rem;
   }
 
@@ -138,7 +137,7 @@ export const AuthPagesStyles = css`
     height: 90vh;
     width: 25vw;
   }
-  @media only screen and (max-width : 1000px) {
+  @media only screen and (max-width: 1000px) {
     .page_container form {
       flex-direction: column;
     }
@@ -157,7 +156,7 @@ export const AuthPagesStyles = css`
     .portfolio_container .video_grid button {
       width: 20vw;
       height: 5vh;
-      background: #70B8FF;
+      background: #70b8ff;
     }
   }
 `;

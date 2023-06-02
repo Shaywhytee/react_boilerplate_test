@@ -1,8 +1,6 @@
-/* eslint-disable prettier/prettier */
 import { css } from 'styled-components';
 
 export const NavBarStyles = css`
-  ${'' /* Nav Bar Styles */}
   .nav_bg {
     position: absolute;
     width: 100vw;
@@ -44,7 +42,7 @@ export const NavBarStyles = css`
     height: 5vh;
     background: none;
     border: none;
-    color: #C0BEC6;
+    color: #c0bec6;
     transition: 0.5s;
     font-size: 1.5rem;
     text-decoration: none;
@@ -60,7 +58,7 @@ export const NavBarStyles = css`
     height: 5vh;
     background: none;
     border: none;
-    color: #C0BEC6;
+    color: #c0bec6;
     transition: 0.5s;
     font-size: 2rem;
     text-decoration: none;
@@ -79,23 +77,23 @@ export const NavBarStyles = css`
 
   .logout_btn,
   .contact_btn {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 10vw;
     height: 5vh;
-    background: #3aaee1;
+    background-color: #6097d0;
     border: none;
-    color: #EBE9EC;
+    color: #ebe9ec;
     transition: 0.5s;
     font-size: 1.5rem;
     text-decoration: none;
-    text-align: center; 
+    text-align: center;
   }
 
   .logout_btn:hover,
   .contact_btn:hover {
-    background-color: #EBE9EC;
+    background-color: #ebe9ec;
     color: #3aaee1;
     letter-spacing: 1px;
   }
@@ -105,7 +103,7 @@ export const NavBarStyles = css`
     height: 5vh;
     background: none;
     border: none;
-    color: #C0BEC6;
+    color: #c0bec6;
     transition: 0.5s;
     font-size: 2rem;
     text-decoration: none;
@@ -117,7 +115,7 @@ export const NavBarStyles = css`
   .nav_bar_wrapper .nav_btn_wrapper .nav_dd option {
     font-size: 2rem;
     text-align: center;
-    background: rgba(45,49,66,0.8);
+    background: rgba(45, 49, 66, 0.8);
   }
 
   @media only screen and (max-width: 750px) {
@@ -129,7 +127,7 @@ export const NavBarStyles = css`
 
     .nav_bar_wrapper {
       align-items: flex-start;
-      background: rgba(45,49,66,0.8);
+      background: rgba(45, 49, 66, 0.8);
       height: 8vh;
     }
 
@@ -162,5 +160,4 @@ export const NavBarStyles = css`
       width: 60vw;
     }
   }
-
 `;

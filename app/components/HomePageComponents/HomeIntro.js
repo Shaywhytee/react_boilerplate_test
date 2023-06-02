@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, useContext } from 'react';
 import FadeInView from '../Misc/FadeIn';
 import FadeOutView from '../Misc/FadeOut';
@@ -29,24 +30,19 @@ function HomeIntro({ onExploreClick }) {
   const HomePageIntroBg = photoUrls[5];
   const Logo = photoUrls[7];
 
-  if (
-    !HomePageIntroBg ||
-    !Logo
-  ) {
+  if (!HomePageIntroBg || !Logo) {
     return null;
   }
 
   if (isLoading) {
-    return (
-      <LoadingSpinner />
-    );
+    return <LoadingSpinner />;
   }
 
   if (hasIntroPlayed) {
     return <></>;
   }
 
-if (isExplore) {
+  if (isExplore) {
     return (
       <FadeOutView>
         <div className="intro_container">

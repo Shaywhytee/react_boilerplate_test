@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const rateLimit = require('express-rate-limit');
 
 function createWebpackMiddleware(compiler, publicPath) {
   return webpackDevMiddleware(compiler, {
@@ -18,6 +19,14 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
     compiler,
     webpackConfig.output.publicPath,
   );
+
+  // Apply rate limiting
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+    message: 'Too many requests from this IP, please try again later.',
+  });
+  app.use(limiter);
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));

@@ -17,7 +17,6 @@ function HandleEditForm({ selectedVideo, setSelectedVideo }) {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log(editedVideo)
     await handleEditConfirmation(editedVideo.id, editedVideo);
   };
 
@@ -66,7 +65,7 @@ function HandleEditForm({ selectedVideo, setSelectedVideo }) {
                 video_tags: e.target.value,
               })
             }
-            />
+          />
           <button type="submit">Confirm</button>
           <button type="button" onClick={() => setSelectedVideo(null)}>
             Cancel

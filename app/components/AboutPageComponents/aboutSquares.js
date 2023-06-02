@@ -33,12 +33,12 @@ function AboutSquares() {
         <div className="about_square">
           <h1>{textBox1.title}</h1>
           <p>{textBox1.content}</p>
-          <img src={pictureBox1} className="group_picture" />
+          <img src={pictureBox1} className="group_picture" alt="About me" />
         </div>
       </SlideRight>
       <SlideLeft>
         <div className="about_square">
-          <img src={pictureBox2} className="gaming_picture" />
+          <img src={pictureBox2} className="gaming_picture" alt="About me" />
           <p>{textBox2.content}</p>
           <h1>{textBox2.title}</h1>
         </div>
@@ -47,7 +47,7 @@ function AboutSquares() {
         <div className="about_square">
           <h1>{textBox3.title}</h1>
           <p>{textBox3.content}</p>
-          <img src={pictureBox3} className="jersey_picture" />
+          <img src={pictureBox3} className="jersey_picture" alt="About me" />
         </div>
       </SlideRight>
     </div>

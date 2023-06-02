@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../utils/authContext';
 import { handleDelete } from './HandleDelete';
 import HandleEditForm from './HandleEditForm';
 
-function EditDelete( {video} ) {
+function EditDelete({ video }) {
   const { loggedIn } = useContext(AuthContext);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -11,7 +12,9 @@ function EditDelete( {video} ) {
     <>
       {loggedIn && (
         <div className="admin_video_btns">
-          <button onClick={() => handleDelete(video.id)}>Delete</button>
+          <button type="button" onClick={() => handleDelete(video.id)}>
+            Delete
+          </button>
           <button type="button" onClick={() => setSelectedVideo(video)}>
             Edit
           </button>

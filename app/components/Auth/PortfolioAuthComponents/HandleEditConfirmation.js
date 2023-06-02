@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable no-alert */
 import axios from 'axios';
 
 export async function handleEditConfirmation(videoId, editedVideo) {
@@ -10,9 +10,9 @@ export async function handleEditConfirmation(videoId, editedVideo) {
     if (response.status === 200) {
       window.location.reload();
     } else {
-      console.error('Failed to update video:', response.status);
+      window.alert('Failed to update video:', response.status);
     }
   } catch (error) {
-    console.error('Error updating video', error);
+    window.alert('Error updating video', error);
   }
 }
